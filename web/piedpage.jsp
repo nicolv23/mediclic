@@ -47,13 +47,12 @@
               <ul class="list-unstyled links">
                 <li><a href="#">Événements</a></li>
                 <li><a href="#">Nouveauté</a></li>
-                <li><a href="#">Récompenses</a></li>
               </ul>
             </div>
             <div class="col-md-2 ml-auto">
               <h3>À propos de nous</h3>
               <ul class="list-unstyled links">
-                <li><a href="#">Nous Contacter</a></li>
+                <li><a href="contact.jsp">Nous Contacter</a></li>
                 <li><a href="#">Nos Services</a></li>
                 <li><a href="#">Notre Équipe</a></li>
                 <li><a href="#">Nos carrières</a></li>

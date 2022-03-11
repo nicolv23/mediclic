@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 2022-03-11, 10:48:54
+    Document   : contact
+    Created on : 2022-03-11, 13:54:07
     Author     : Volta
 --%>
 
@@ -9,20 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Clic Santé</title>
-        <link rel="stylesheet" href="css/style.css">
+        <title>JSP Page</title>
     </head>
     <body>
         <%@include file="entete.jsp" %>
         <script>
-        document.getElementById("inscription").classList.remove("active");
+        document.getElementById("accueil").classList.remove("active");
         document.getElementById("connexion").classList.remove("active");
-        document.getElementById("contact").classList.remove("active");
-        document.getElementById("accueil").classList.add("active");
+        document.getElementById("inscription").classList.remove("active");
+        document.getElementById("contact").classList.add("active");
         </script>
         <div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <h1>Page d'accueil à faire</h1>
+            <h1>Page de contact à faire</h1>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             
         </div>
