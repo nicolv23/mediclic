@@ -16,9 +16,8 @@
         <%@include file="entete.jsp" %>
         <script>
         document.getElementById("accueil").classList.remove("active");
-        document.getElementById("connexion").classList.remove("active");
+        document.getElementById("connexion").classList.add("active");
         document.getElementById("contact").classList.remove("active");
-        document.getElementById("inscription").classList.add("active");
         </script>
     
     <div class="contents">
@@ -59,7 +58,10 @@
                     <div class="control__indicator"></div>
                   </label>
                 </div>
-
+   
+                  <br>
+                  Vous avez déjà un compte? <a class="pascompte" href="connexion.jsp">Se connecter</a>
+                  <br><br>
                 <input type="submit" value="S'inscrire" class="btn btn-block btn-primary">
 
               </form>

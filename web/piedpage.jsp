@@ -37,7 +37,7 @@
                 <li><a href="#">(514) 876-4134</a></li>
                 <li><a href="#">905 Blvrd St-Michel</a></li>
                 <li><a href="#">H4R-9X2</a></li>
-                <li><a href="#">clicSante@sante.qc.ca</a></li>
+                <li><a href="#">mediclic@gmail.com</a></li>
 
 
               </ul>

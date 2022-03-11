@@ -17,7 +17,6 @@
         <br><br>
             <script>
         document.getElementById("accueil").classList.remove("active");
-        document.getElementById("inscription").classList.remove("active");
         document.getElementById("contact").classList.remove("active");
         document.getElementById("connexion").classList.add("active");
         </script>
@@ -40,6 +39,8 @@
                   <label for="cpassword">Mot de passe</label>
                   <input type="password" class="form-control" placeholder="Entrez votre mot de passe" id="cpassword">
                 </div>
+                  <br>
+                  Vous n'êtes pas encore inscrits? <a class="pascompte" href="inscription.jsp">Créer un compte</a>
                   <br><br>
 
 

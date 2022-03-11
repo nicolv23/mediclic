@@ -15,7 +15,6 @@
     <body>
         <%@include file="entete.jsp" %>
         <script>
-        document.getElementById("inscription").classList.remove("active");
         document.getElementById("connexion").classList.remove("active");
         document.getElementById("contact").classList.remove("active");
         document.getElementById("accueil").classList.add("active");

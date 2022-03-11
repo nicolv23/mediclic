@@ -54,7 +54,7 @@
                 <a class="dropdown-item" href="#">Spécialiste 4</a>
               </div>
             </li>
-	        	<li class="nav-item" id="inscription"><a href="inscription.jsp" class="nav-link">S'inscrire</a></li>
+	        	
 	        	<li class="nav-item" id="connexion"><a href="connexion.jsp" class="nav-link">Se connecter</a></li>
 	          <li class="nav-item" id="contact"><a href="contact.jsp" class="nav-link">Nous contacter</a></li>
 	        </ul>

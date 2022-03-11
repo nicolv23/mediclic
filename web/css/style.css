@@ -8112,7 +8112,7 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #f1bc31; }
+  color: #ffcc00; }
   a:hover, a:focus {
     text-decoration: none !important;
     outline: none !important;
@@ -8324,7 +8324,6 @@ h1, h2, h3, h4, h5,
       font-size: 20px; }
 
 .form-control {
-  height: 46px !important;
   background: #fff !important;
   color: #000 !important;
   font-size: 14px;
