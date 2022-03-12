@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Connexion</title>
+        <title>Medi - Connexion</title>
         <link rel="stylesheet" href="css/inscription.css">
     </head>
     <body>
@@ -33,7 +33,7 @@
                   <br>
                 <div class="form-group first">
                   <label for="cusername">Adresse courriel</label>
-                  <input type="text" class="form-control" placeholder="Saisissez votre email" id="cusername">
+                  <input type="email" class="form-control" placeholder="Saisissez votre email" id="cusername">
                 </div>
                 <div class="form-group last mb-3">
                   <label for="cpassword">Mot de passe</label>

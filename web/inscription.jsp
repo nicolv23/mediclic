@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inscription</title>
+        <title>Medi - Inscription</title>
         <link rel="stylesheet" href="css/inscription.css">
     </head>
     <body>
@@ -42,7 +42,7 @@
                 </div>  
                 <div class="form-group first">
                   <label for="username">Adresse courriel</label>
-                  <input type="text" class="form-control" placeholder="votre-email@gmail.com" id="username">
+                  <input type="email" class="form-control" placeholder="votre-email@gmail.com" id="username">
                 </div>
                 <div class="form-group last mb-3">
                   <label for="password">Mot de passe</label>

@@ -19,7 +19,7 @@
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col">
-					<a class="navbar-brand" href="index.jsp">Medi <span>Clic</span></a>
+					<a class="navbar-brand agrandissement" href="index.jsp">Medi <span>Clic</span></a>
 				</div>
 				<div class="col d-flex justify-content-end">
 					<div class="social-media">

@@ -28,7 +28,7 @@
         <div class="container">
           <div class="row mb-5">
             <div class="col-md-3">
-              <a href="#" class="footer-site-logo">MediClic</a>
+              <a href="index.jsp" class="footer-site-logo agrandissement">MediClic</a>
               <p>Conslutez nos professionels de santé médical dés maintenant ! </p>
             </div>
             <div class="col-md-2 ml-auto">

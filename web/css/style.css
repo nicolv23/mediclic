@@ -8333,3 +8333,7 @@ h1, h2, h3, h4, h5,
   border: 1px solid rgba(0, 0, 0, 0.1); }
   .form-control:focus, .form-control:active {
     border-color: #000; }
+  .agrandissement:hover{
+      color:orange;
+      
+  }
