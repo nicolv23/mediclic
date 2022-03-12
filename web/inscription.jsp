@@ -18,6 +18,7 @@
         document.getElementById("accueil").classList.remove("active");
         document.getElementById("connexion").classList.add("active");
         document.getElementById("contact").classList.remove("active");
+        document.getElementById("connexion").innerHTML = "<a href=\"connexion.jsp\" class=\"nav-link\">S'inscrire</a>";
         </script>
     
     <div class="contents">
@@ -54,7 +55,7 @@
                 
                 <div class="d-sm-flex mb-5 align-items-center">
                   <label class="control control--checkbox mb-3 mb-sm-0"><span class="caption">Je suis d'accord avec les <a href="#">Termes et Conditions</a></span>
-                    <input type="checkbox" checked="checked"/>
+                    <input type="checkbox"/>
                     <div class="control__indicator"></div>
                   </label>
                 </div>
