@@ -21,7 +21,7 @@
         </script>
         <div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <h1>Page d'accueil à faire</h1>
+            <h1>Page d'accueil à faire test</h1>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             
         </div>
