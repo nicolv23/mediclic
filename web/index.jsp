@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,6 +23,12 @@
         <div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <h1>Page d'accueil à faire test</h1>
+            <c:if test="${sessionScope.nom != null}">
+                <h2>Bonjour M./Mme ${sessionScope.nom}</h2>
+            </c:if>
+            <c:if test="${requestScope.message != null}">
+                <h2>${requestScope.message}</h2>
+            </c:if>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             
         </div>

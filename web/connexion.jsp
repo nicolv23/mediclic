@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,18 +31,24 @@
               <div class="text-center mb-5">
               <h3>Connexion</h3>
               </div>
-              <form action="#" method="post">
+              <c:if test="${requestScope.message != null}">
+                 <div class="text-center mb-5">
+                     <h4 style="color:crimson">${requestScope.message}</h4>
+                 </div>
+              </c:if>
+              
+              <form action="connexion" method="post">
                   <br>
                 <div class="form-group first">
                   <label for="cusername">Adresse courriel</label>
-                  <input type="email" class="form-control" placeholder="Saisissez votre email" id="cusername">
+                  <input type="email" name="email" class="form-control" placeholder="Saisissez votre email" id="cusername" required>
                 </div>
                 <div class="form-group last mb-3">
                   <label for="cpassword">Mot de passe</label>
-                  <input type="password" class="form-control" placeholder="Entrez votre mot de passe" id="cpassword">
+                  <input type="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" id="cpassword" required>
                 </div>
                   <br>
-                  Vous n'êtes pas encore inscrits? <a class="pascompte" href="inscription.jsp">Créer un compte</a>
+                  Vous n'êtes pas encore inscrit ? <a class="pascompte" href="inscription.jsp">Créer un compte</a>
                   <br><br>
 
 

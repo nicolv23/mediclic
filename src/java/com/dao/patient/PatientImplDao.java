@@ -20,6 +20,9 @@ import java.util.logging.Logger;
  * @author Mohand
  */
 public class PatientImplDao implements PatientDao{
+    
+    private static final String SQL_SELECT = "SELECT * FROM patients";
+    private static final String SQL_CONNEXION = "SELECT * FROM patients WHERE mail=? AND password=?";
 
     @Override
     public List<Patient> findAll() {
@@ -27,7 +30,7 @@ public class PatientImplDao implements PatientDao{
         try {
    
             
-            PreparedStatement ps = ConnexionBD.getConnection().prepareStatement("select * from patients");
+            PreparedStatement ps = ConnexionBD.getConnection().prepareStatement(SQL_SELECT);
             ResultSet result = ps.executeQuery();
             
             listePatient = new ArrayList<>();
@@ -54,7 +57,31 @@ public class PatientImplDao implements PatientDao{
         } catch (SQLException ex) {
             Logger.getLogger(PatientImplDao.class.getName()).log(Level.SEVERE, null, ex);
         }
+       ConnexionBD.closeConnection();
        return listePatient; 
+    }
+
+    @Override
+    public Patient isExiste(String email, String password) {
+        Patient patient = null;
+        try {
+            
+            PreparedStatement ps = ConnexionBD.getConnection().prepareStatement(SQL_CONNEXION);
+            ps.setString(1, email);
+            ps.setString(2, password);
+            ResultSet result = ps.executeQuery();
+            
+            while(result.next()) {
+                patient = new Patient();
+                patient.setNom(result.getString("nom"));
+                patient.setPrenom(result.getString("prenom"));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientImplDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ConnexionBD.closeConnection();
+        return patient;
     }
     
 }
