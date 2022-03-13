@@ -13,7 +13,7 @@ import java.sql.Connection;
  */
 public interface ConfigBD {
     //  Définir l’url de connexion avec le nom de la base donnée
-	public final static String URL = "jdbc:mysql://127.0.0.1:3306/NOMDELABD?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
+	public final static String URL = "jdbc:mysql://127.0.0.1:3306/mediclic?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false";
         //Les identifiants de connection de la bd
 	public final static String USER = "root";
 	public final static String PASSWORD = "root";
