@@ -9,5 +9,8 @@ import java.util.List;
  * @author Mohand
  */
 public interface PatientDao {
-     List<Patient>  findAll();
+    
+     List<Patient> findAll();
+     Patient isExiste(String email, String password);
+     
 }

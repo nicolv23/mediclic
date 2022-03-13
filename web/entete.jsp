@@ -1,7 +1,9 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="fr">
   <head>
-  	<title>Entête</title>
+  	<title>EntÃªte</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -48,14 +50,22 @@
 	        	<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prendre un rendez-vous</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="#">Spécialiste 1</a>
-                <a class="dropdown-item" href="#">Spécialiste 2</a>
-                <a class="dropdown-item" href="#">Spécialiste 3</a>
-                <a class="dropdown-item" href="#">Spécialiste 4</a>
+              	<a class="dropdown-item" href="#">SpÃ©cialiste 1</a>
+                <a class="dropdown-item" href="#">SpÃ©cialiste 2</a>
+                <a class="dropdown-item" href="#">SpÃ©cialiste 3</a>
+                <a class="dropdown-item" href="#">SpÃ©cialiste 4</a>
               </div>
             </li>
-	        	
-	        	<li class="nav-item" id="connexion"><a href="connexion.jsp" class="nav-link">Se connecter</a></li>
+            <c:choose>
+                <c:when test="${sessionScope.nom != null}">
+                    <li class="nav-item" id="deconnexion"><a href="deconnexion" class="nav-link">Se dÃ©connecter</a></li>
+                </c:when>
+                    
+                <c:otherwise>
+                    <li class="nav-item" id="connexion"><a href="connexion.jsp" class="nav-link">Se connecter</a></li>
+                </c:otherwise>    
+            </c:choose>	
+                  
 	          <li class="nav-item" id="contact"><a href="contact.jsp" class="nav-link">Nous contacter</a></li>
 	        </ul>
 	      </div>
