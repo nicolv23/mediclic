@@ -18,8 +18,7 @@
         <%@include file="entete.jsp" %>
         <br><br>
             <script>
-        document.getElementById("accueil").classList.remove("active");
-        document.getElementById("contact").classList.remove("active");
+        document.getElementsByClassName("active")[0].classList.remove("active");
         document.getElementById("connexion").classList.add("active");
         </script>
     <div class="contents">

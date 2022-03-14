@@ -10,27 +10,34 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Medi - Accueil</title>
+        <title>Medi - Profil</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         <%@include file="entete.jsp" %>
         <script>
         document.getElementsByClassName("active")[0].classList.remove("active");
-        document.getElementById("accueil").classList.add("active");
-        
+        document.getElementById("profil").classList.add("active");
         </script>
         <div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <h1>Page d'accueil à faire test</h1>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <c:if test="${sessionScope.nom != null}">
-                <h2>Bonjour M./Mme ${sessionScope.nom}</h2>
-                <h3>( ${sessionScope.type} )</h3>
+                
+                    
+                    <c:if test="${sessionScope.type == 'patient'}">
+                    <h2>Bonjour M./Mme ${sessionScope.nom}</h2>
+                    <h2>Assurance :  ${sessionScope.assurance}</h2>
+                    </c:if>
+                    <c:if test="${sessionScope.type == 'medecin'}">
+                    <h2>Bonjour Docteur ${sessionScope.nom}</h2>
+                    <h2>Facturation :  ${sessionScope.facturation}</h2>
+                    </c:if>
+                
             </c:if>
             <c:if test="${requestScope.message != null}">
                 <h2>${requestScope.message}</h2>
             </c:if>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             
         </div>
         <%@include file="piedpage.jsp" %>

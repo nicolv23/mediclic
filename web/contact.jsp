@@ -14,11 +14,12 @@
     </head>
     <body>
         <%@include file="entete.jsp" %>
+        
         <script>
-        document.getElementById("accueil").classList.remove("active");
-        document.getElementById("connexion").classList.remove("active");
+        document.getElementsByClassName("active")[0].classList.remove("active");
         document.getElementById("contact").classList.add("active");
         </script>
+
     <div class="contents">
 
       <div class="container">

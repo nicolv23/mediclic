@@ -50,12 +50,14 @@ public class Connexion extends HttpServlet {
             session.setAttribute("nom", patient.getNom());
             session.setAttribute("prenom", patient.getPrenom());
             session.setAttribute("type", "patient");
+            session.setAttribute("assurance", patient.getAssurance());
             urlRedirect = "index.jsp";
         }else if(medecin != null){
             HttpSession session = request.getSession(true);
             session.setAttribute("nom", medecin.getNom());
             session.setAttribute("prenom", medecin.getPrenom());
             session.setAttribute("type", "medecin");
+            session.setAttribute("facturation", medecin.getFacturation());
             urlRedirect = "index.jsp";
         }
         
