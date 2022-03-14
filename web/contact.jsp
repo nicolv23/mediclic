@@ -33,7 +33,17 @@
                   <br>
                 <div class="form-group first">
                   <label for="cusername">Adresse courriel</label>
-                  <input type="text" class="form-control" placeholder="Saisissez votre email" name="email" id="cusername">
+  
+                  
+            <c:choose>
+                <c:when test="${sessionScope.nom != null}">
+                    <input type="text" class="form-control" value="${sessionScope.mail}" name="email" id="cusername" disabled>
+                </c:when>
+                    
+                <c:otherwise>
+                    <input type="text" class="form-control" placeholder="Entrez votre mail" name="email" id="cusername">
+                </c:otherwise>    
+            </c:choose>	
                 </div>
                 <div class="form-group last mb-3">
                   <label for="cpassword">Message</label>

@@ -47,6 +47,7 @@ public class Connexion extends HttpServlet {
         
         if(patient != null) {
             HttpSession session = request.getSession(true);
+            session.setAttribute("mail", patient.getMail());
             session.setAttribute("nom", patient.getNom());
             session.setAttribute("prenom", patient.getPrenom());
             session.setAttribute("type", "patient");
@@ -54,6 +55,7 @@ public class Connexion extends HttpServlet {
             urlRedirect = "index.jsp";
         }else if(medecin != null){
             HttpSession session = request.getSession(true);
+            session.setAttribute("mail", medecin.getMail());
             session.setAttribute("nom", medecin.getNom());
             session.setAttribute("prenom", medecin.getPrenom());
             session.setAttribute("type", "medecin");
