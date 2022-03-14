@@ -73,8 +73,14 @@ public class PatientImplDao implements PatientDao{
             
             while(result.next()) {
                 patient = new Patient();
+                patient.setID(result.getInt("id") );
                 patient.setNom(result.getString("nom"));
                 patient.setPrenom(result.getString("prenom"));
+                patient.setAssurance(result.getString("assurance"));
+                patient.setNaissance(result.getString("naissance"));
+                patient.setSexe(result.getString("sexe"));
+                patient.setMail(result.getString("mail"));
+                patient.setPassword(result.getString("password"));
             }
             
         } catch (SQLException ex) {

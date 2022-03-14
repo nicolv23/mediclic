@@ -74,8 +74,17 @@ public class MedecinImplDao implements MedecinDao{
             while(resultat.next()){
                 
                 medecin = new Medecin();
+                medecin.setId(resultat.getInt("id"));
                 medecin.setNom(resultat.getString("nom"));
                 medecin.setPrenom(resultat.getString("prenom"));
+                medecin.setSpecialite(resultat.getString("specialite"));
+                medecin.setNumpro(resultat.getString("numpro"));
+                medecin.setCoordonnes(resultat.getString("coordonnes"));
+                medecin.setFacturation(resultat.getDouble("facturation"));
+                medecin.setSexe(resultat.getString("sexe"));
+                medecin.setMail(resultat.getString("mail"));
+                medecin.setPassword(resultat.getString("password"));
+                
             }
         } catch (SQLException ex) {
             Logger.getLogger(MedecinImplDao.class.getName()).log(Level.SEVERE, null, ex);
