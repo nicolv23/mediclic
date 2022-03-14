@@ -25,6 +25,7 @@
             <h1>Page d'accueil à faire test</h1>
             <c:if test="${sessionScope.nom != null}">
                 <h2>Bonjour M./Mme ${sessionScope.nom}</h2>
+                <h3>( ${sessionScope.type} )</h3>
             </c:if>
             <c:if test="${requestScope.message != null}">
                 <h2>${requestScope.message}</h2>

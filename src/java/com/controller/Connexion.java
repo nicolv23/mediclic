@@ -5,7 +5,9 @@
  */
 package com.controller;
 
+import com.action.MedecinAction;
 import com.action.PatientAction;
+import com.model.medecin.Medecin;
 import com.model.patient.Patient;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -41,13 +43,23 @@ public class Connexion extends HttpServlet {
         String message = "Identifiants invalides, veuillez réessayer.";
         
         Patient patient = PatientAction.connexionPatient(email, password);
+        Medecin medecin = MedecinAction.connexionMedecin(email, password);
         
         if(patient != null) {
             HttpSession session = request.getSession(true);
             session.setAttribute("nom", patient.getNom());
             session.setAttribute("prenom", patient.getPrenom());
+            session.setAttribute("type", "patient");
             urlRedirect = "index.jsp";
-        } else {
+        }else if(medecin != null){
+            HttpSession session = request.getSession(true);
+            session.setAttribute("nom", medecin.getNom());
+            session.setAttribute("prenom", medecin.getPrenom());
+            session.setAttribute("type", "medecin");
+            urlRedirect = "index.jsp";
+        }
+        
+        else {
             request.setAttribute("message", message);
             urlRedirect = "connexion.jsp";
         }

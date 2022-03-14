@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/dao/medecin/MedecinImplDao.java</file>
+            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/action/MedecinAction.java</file>
+            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/controller/Deconnexion.java</file>
+            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/controller/Connexion.java</file>
+            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/action/PatientAction.java</file>
+            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/web/index.jsp</file>
+            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/dao/medecin/Test.java</file>
+        </group>
     </open-files>
 </project-private>
