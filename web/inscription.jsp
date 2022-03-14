@@ -21,7 +21,7 @@
         document.getElementById("contact").classList.remove("active");
         document.getElementById("connexion").innerHTML = "<a href=\"connexion.jsp\" class=\"nav-link\">S'inscrire</a>";
         </script>
-    
+    <br><br>
     <div class="contents">
 
       <div class="container">
@@ -35,7 +35,7 @@
               <center>
                   <a href="inscriptionPatient.jsp" class="btn btn-info" role="button">Client</a>
                   &nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="" class="btn btn-primary" role="button">Médecin</a>
+                  <a href="inscriptionMedecin.jsp" class="btn btn-primary" role="button">Médecin</a>
               </center>
                   <br>
                   Vous avez déjà un compte? <a class="pascompte" href="connexion.jsp">Se connecter</a>
@@ -47,7 +47,7 @@
 
     
   </div>
-
+        <br><br><br><br><br><br><br><br><br><br>
         <%@include file="piedpage.jsp" %>
     </body>
 </html>

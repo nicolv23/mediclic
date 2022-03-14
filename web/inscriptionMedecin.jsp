@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Medi - P-Inscription</title>
+        <title>Medi - M-Inscription</title>
         <link rel="stylesheet" href="css/inscription.css">
     </head>
     <body>
@@ -28,7 +28,7 @@
           <div class="col-md-12 paddingajout">
             <div class="form-block mx-auto marginajout">
               <div class="text-center mb-5">
-              <h3>Inscription d'un patient</h3>
+              <h3>Inscription d'un médecin</h3>
               </div>
               <form action="#" method="post">
                   
