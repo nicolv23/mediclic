@@ -59,6 +59,7 @@ public class Connexion extends HttpServlet {
         }else if(medecin != null){
             HttpSession session = request.getSession(true);
             session.setAttribute("id", medecin.getId());
+            session.setAttribute("sexe", medecin.getSexe());
             session.setAttribute("specialite", medecin.getSpecialite());
             session.setAttribute("numpro", medecin.getNumpro());
             session.setAttribute("coordonnes", medecin.getCoordonnes());
