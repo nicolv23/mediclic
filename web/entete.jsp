@@ -68,7 +68,7 @@
                   
 	          <li class="nav-item" id="contact"><a href="contact.jsp" class="nav-link">Nous contacter</a></li>
                 <c:if test="${sessionScope.nom != null}">
-                    <li class="nav-item" id="profil"><a href="profil.jsp" class="nav-link">Mon profil</a></li>
+                <li class="nav-item" id="profil"><a href="profil.jsp" class="nav-link"><img src="images/profile.png" alt="Image de Profile" width="20" height="20">   ${sessionScope.prenom} ${sessionScope.nom}</a></li>
                 </c:if>
 	        </ul>
 	      </div>

@@ -27,10 +27,14 @@
                     <c:if test="${sessionScope.type == 'patient'}">
                     <h2>Bonjour M./Mme ${sessionScope.nom}</h2>
                     <h2>Assurance :  ${sessionScope.assurance}</h2>
+                    <h2>Sexe :  ${sessionScope.sexe}</h2>
+                    <h2>Naissance :  ${sessionScope.naissance}</h2>
                     </c:if>
                     <c:if test="${sessionScope.type == 'medecin'}">
                     <h2>Bonjour Docteur ${sessionScope.nom}</h2>
                     <h2>Facturation :  ${sessionScope.facturation}</h2>
+                    <h2>Spécialité :  ${sessionScope.specialite}</h2>
+                    <h2>Coordonnées :  ${sessionScope.coordonnes}</h2>
                     </c:if>
                 
             </c:if>
