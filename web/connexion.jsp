@@ -35,6 +35,12 @@
                      <h4 style="color:crimson">${requestScope.message}</h4>
                  </div>
               </c:if>
+                
+              <c:if test="${requestScope.messageInscription != null}">
+                 <div class="text-center mb-5">
+                     <h4 style="color:forestgreen">${requestScope.messageInscription}</h4>
+                 </div>
+              </c:if>
               
               <form action="connexion" method="post">
                   <br>

@@ -27,4 +27,9 @@ public class PatientAction {
         return patient;
     }
     
+    public static boolean inscriptionPatient(Patient patient) {
+        boolean succes = dao.create(patient);
+        return succes;
+    }
+    
 }

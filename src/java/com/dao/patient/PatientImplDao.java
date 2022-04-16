@@ -23,6 +23,8 @@ public class PatientImplDao implements PatientDao{
     
     private static final String SQL_SELECT = "SELECT * FROM patients";
     private static final String SQL_CONNEXION = "SELECT * FROM patients WHERE mail=? AND password=?";
+    private static final String SQL_INSERT = "INSERT INTO patients(nom, prenom, assurance, naissance, sexe, mail, password) "
+            + "VALUES(?, ?, ?, ?, ?, ?, ?)";
 
     @Override
     public List<Patient> findAll() {
@@ -88,6 +90,35 @@ public class PatientImplDao implements PatientDao{
         }
         ConnexionBD.closeConnection();
         return patient;
+    }
+
+    @Override
+    public boolean create(Patient patient) {
+        boolean retour = false;
+        int nbLigne = 0;
+        PreparedStatement ps;
+        try {
+            
+            ps = ConnexionBD.getConnection().prepareStatement(SQL_INSERT);
+            
+            ps.setString(1, patient.getNom());
+            ps.setString(2, patient.getPrenom());
+            ps.setString(3, patient.getAssurance());
+            ps.setString(4, patient.getNaissance());
+            ps.setString(5, patient.getSexe());
+            ps.setString(6, patient.getMail());
+            ps.setString(7, patient.getPassword());
+            
+            nbLigne = ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientImplDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(nbLigne > 0) {
+            retour = true;
+        }
+        ConnexionBD.closeConnection();
+        return retour;
     }
     
 }

@@ -8,6 +8,14 @@
         <servlet-name>Deconnexion</servlet-name>
         <servlet-class>com.controller.Deconnexion</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Inscription</servlet-name>
+        <servlet-class>com.controller.Inscription</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InscriptionPatient</servlet-name>
+        <servlet-class>com.controller.InscriptionPatient</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Connexion</servlet-name>
         <url-pattern>/connexion</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>Deconnexion</servlet-name>
         <url-pattern>/deconnexion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Inscription</servlet-name>
+        <url-pattern>/inscription</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InscriptionPatient</servlet-name>
+        <url-pattern>/inscriptionPatient</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

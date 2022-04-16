@@ -30,28 +30,44 @@
               <div class="text-center mb-5">
               <h3>Inscription d'un patient</h3>
               </div>
-              <form action="#" method="post">
+              <form action="inscriptionPatient" method="post">
                   
                 <div class="form-group first">
                   <label for="nom">Nom</label>
-                  <input type="text" class="form-control" placeholder="Votre nom" id="nom" required>
+                  <input type="text" class="form-control" placeholder="Votre nom" name="nom" id="nom" required>
                 </div>  
                 <div class="form-group first">
                   <label for="prenom">Prénom</label>
-                  <input type="text" class="form-control" placeholder="Votre prénom" id="prenom" required>
+                  <input type="text" class="form-control" placeholder="Votre prénom" name="prenom" id="prenom" required>
+                </div>  
+                <div class="form-group first">
+                  <label for="assurance">Numéro d'assurance maladie</label>
+                  <input type="text" class="form-control" placeholder="BOUF94011419" name="assurance" id="assurance" required>
+                </div>
+                <div class="form-group first">
+                  <label for="naissance">Date de naissance</label>
+                  <input type="text" class="form-control" placeholder="30-01-2000" name="naissance" id="naissance" required>
                 </div>  
                 <div class="form-group first">
                   <label for="username">Adresse courriel</label>
-                  <input type="email" class="form-control" placeholder="votre-email@gmail.com" id="username" required>
+                  <input type="email" class="form-control" placeholder="votre-email@gmail.com" name="email" id="username" required>
                 </div>
                 <div class="form-group last mb-3">
                   <label for="password">Mot de passe</label>
-                  <input type="password" class="form-control" placeholder="Votre mot de passe" id="password" required>
+                  <input type="password" class="form-control" placeholder="Votre mot de passe" name="password" id="password" required>
                 </div>
                 <div class="form-group last mb-3">
                   <label for="cpassword">Confirmer votre mot de passe</label>
                   <input type="password" class="form-control" placeholder="Votre mot de passe" id="cpassword" required>
                 </div>
+                <div class="form-group last mb-3">
+                  <label>Sexe :</label><br>
+                  <input type="radio" id="homme" name="sexe" value="Homme">
+                  <label for="homme">Homme</label><br>
+                  <input type="radio" id="femme" name="sexe" value="Femme">
+                  <label for="femme">Femme</label>
+                </div>
+                  
                 
                 <div class="d-sm-flex mb-5 align-items-center">
                   <label class="control control--checkbox mb-3 mb-sm-0"><span class="caption">Je suis d'accord avec les <a href="#">Termes et Conditions</a></span>
