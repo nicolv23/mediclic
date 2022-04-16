@@ -24,6 +24,18 @@ public class Patient {
 
     }
 
+    public Patient(String nom, String prenom, String assurance, String naissance, String sexe, String mail, String password) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.assurance = assurance;
+        this.naissance = naissance;
+        this.sexe = sexe;
+        this.mail = mail;
+        this.password = password;
+    }
+    
+    
+
     public int getId() {
         return id;
     }
