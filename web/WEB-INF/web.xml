@@ -16,6 +16,10 @@
         <servlet-name>InscriptionPatient</servlet-name>
         <servlet-class>com.controller.InscriptionPatient</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InscriptionMedecin</servlet-name>
+        <servlet-class>com.controller.InscriptionMedecin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Connexion</servlet-name>
         <url-pattern>/connexion</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>InscriptionPatient</servlet-name>
         <url-pattern>/inscriptionPatient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InscriptionMedecin</servlet-name>
+        <url-pattern>/inscriptionMedecin</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

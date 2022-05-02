@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/NetBeansProjects/projet-web/web/inscriptionPatient.jsp</file>
-            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/controller/InscriptionPatient.java</file>
-            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/model/patient/Patient.java</file>
+            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/dao/medecin/MedecinImplDao.java</file>
+            <file>file:/C:/NetBeansProjects/projet-web/web/inscriptionMedecin.jsp</file>
+            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/action/MedecinAction.java</file>
+            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/controller/InscriptionMedecin.java</file>
         </group>
     </open-files>
 </project-private>

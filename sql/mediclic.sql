@@ -22,6 +22,7 @@ CREATE TABLE `mediclic`.`medecins` (
   `numpro` VARCHAR(45) NULL,
   `coordonnes` VARCHAR(45) NULL,
   `facturation` DOUBLE NULL,
+  `lieuTravail` VARCHAR(45) NOT NULL,
   `sexe` VARCHAR(45) NULL,
   `mail` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,

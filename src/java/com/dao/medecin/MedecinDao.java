@@ -15,5 +15,6 @@ public interface MedecinDao {
     
     List<Medecin> findAll();
     Medecin isExiste(String email, String password);
+    boolean create(Medecin medecin);
     
 }
