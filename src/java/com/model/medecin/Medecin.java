@@ -17,6 +17,7 @@ public class Medecin {
     private String numpro;
     private String coordonnes;
     private double facturation;
+    private String lieuTravail;
     private String sexe;
     private String mail;
     private String password;
@@ -25,6 +26,21 @@ public class Medecin {
     public Medecin(){
         
     }
+
+    public Medecin(String nom, String prenom, String specialite, String numpro, String coordonnes, double facturation, String lieuTravail, String sexe, String mail, String password) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.specialite = specialite;
+        this.numpro = numpro;
+        this.coordonnes = coordonnes;
+        this.facturation = facturation;
+        this.lieuTravail = lieuTravail;
+        this.sexe = sexe;
+        this.mail = mail;
+        this.password = password;
+    }
+    
+    
     
     public int getId() {
         return id;
@@ -105,6 +121,14 @@ public class Medecin {
 
     public void setFacturation(Double facturation) {
         this.facturation = facturation;
+    }
+
+    public String getLieuTravail() {
+        return lieuTravail;
+    }
+
+    public void setLieuTravail(String lieuTravail) {
+        this.lieuTravail = lieuTravail;
     }
     
     

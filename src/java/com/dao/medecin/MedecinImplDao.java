@@ -22,6 +22,8 @@ public class MedecinImplDao implements MedecinDao{
 
     private static final String SQL_SELECT = "SELECT * FROM medecins";
     private static final String SQL_CONNEXION = "SELECT * FROM medecins WHERE mail=? AND password=?";
+    private static final String SQL_INSERT = "INSERT INTO medecins(nom, prenom, specialite, numpro, coordonnes, facturation, "
+            + "lieuTravail, sexe, mail, password) VALUES(?,?,?,?,?,?,?,?,?,?)";
     
 
     @Override
@@ -91,6 +93,39 @@ public class MedecinImplDao implements MedecinDao{
         }
         ConnexionBD.closeConnection();
         return medecin;
+    }
+
+    @Override
+    public boolean create(Medecin medecin) {
+        boolean retour = false;
+        int nbLigne = 0;
+        PreparedStatement ps;
+        try {
+            
+            ps = ConnexionBD.getConnection().prepareStatement(SQL_INSERT);
+            
+            ps.setString(1, medecin.getNom());
+            ps.setString(2, medecin.getPrenom());
+            ps.setString(3, medecin.getSpecialite());
+            ps.setString(4, medecin.getNumpro());
+            ps.setString(5, medecin.getCoordonnes());
+            ps.setDouble(6, medecin.getFacturation());
+            ps.setString(7, medecin.getLieuTravail());
+            ps.setString(8, medecin.getSexe());
+            ps.setString(9, medecin.getMail());
+            ps.setString(10, medecin.getPassword());
+            
+            nbLigne = ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(MedecinImplDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(nbLigne > 0) {
+            retour = true;
+        }
+        ConnexionBD.closeConnection();
+        return retour;
+        
     }
     
    
