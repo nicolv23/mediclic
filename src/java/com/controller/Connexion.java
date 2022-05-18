@@ -45,6 +45,7 @@ public class Connexion extends HttpServlet {
         Patient patient = PatientAction.connexionPatient(email, password);
         Medecin medecin = MedecinAction.connexionMedecin(email, password);
         
+        
         if(patient != null) {
             HttpSession session = request.getSession(true);
             session.setAttribute("id", patient.getId());

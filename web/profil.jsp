@@ -19,6 +19,15 @@
         document.getElementsByClassName("active")[0].classList.remove("active");
         document.getElementById("profil").classList.add("active");
         </script>
+        <style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
         <div>
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <c:if test="${sessionScope.nom != null}">

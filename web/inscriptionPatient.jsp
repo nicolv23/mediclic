@@ -20,7 +20,15 @@
         document.getElementById("contact").classList.remove("active");
         document.getElementById("connexion").innerHTML = "<a href=\"connexion.jsp\" class=\"nav-link\">S'inscrire</a>";
         </script>
-    
+    <style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
     <div class="contents">
 
       <div class="container">

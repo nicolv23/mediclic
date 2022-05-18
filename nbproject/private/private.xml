@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/dao/medecin/MedecinImplDao.java</file>
-            <file>file:/C:/NetBeansProjects/projet-web/web/inscriptionMedecin.jsp</file>
-            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/action/MedecinAction.java</file>
-            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/controller/InscriptionMedecin.java</file>
+            <file>file:/C:/Users/Volta/Desktop/Mediclic%20Web%202/Mediclic%20Web%202/src/java/com/controller/Connexion.java</file>
+            <file>file:/C:/Users/Volta/Desktop/Mediclic%20Web%202/Mediclic%20Web%202/src/java/com/controller/InscriptionPatient.java</file>
+            <file>file:/C:/Users/Volta/Desktop/Mediclic%20Web%202/Mediclic%20Web%202/src/java/com/dao/patient/RendezVousDao.java</file>
+            <file>file:/C:/Users/Volta/Desktop/Mediclic%20Web%202/Mediclic%20Web%202/src/java/com/controller/Deconnexion.java</file>
+            <file>file:/C:/Users/Volta/Desktop/Mediclic%20Web%202/Mediclic%20Web%202/src/java/com/controller/InscriptionMedecin.java</file>
         </group>
     </open-files>
 </project-private>

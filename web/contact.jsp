@@ -19,6 +19,16 @@
         document.getElementsByClassName("active")[0].classList.remove("active");
         document.getElementById("contact").classList.add("active");
         </script>
+        
+        <style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
 
     <div class="contents">
 

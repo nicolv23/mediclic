@@ -18,10 +18,19 @@
         <script>
         document.getElementsByClassName("active")[0].classList.remove("active");
         document.getElementById("accueil").classList.add("active");
-        
         </script>
         <div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br>
+            <style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+<br><br><br><br><br><br><br><br><br><br><br><br>
             <h1>Page d'accueil à faire test</h1>
             <c:if test="${sessionScope.nom != null}">
                 <h2>Bonjour M./Mme ${sessionScope.nom}</h2>
