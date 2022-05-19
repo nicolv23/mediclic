@@ -5,8 +5,10 @@
  */
 package com.controller;
 
+import com.action.AdministrateurAction;
 import com.action.MedecinAction;
 import com.action.PatientAction;
+import com.model.admin.Administrateur;
 import com.model.medecin.Medecin;
 import com.model.patient.Patient;
 import java.io.IOException;
@@ -44,6 +46,7 @@ public class Connexion extends HttpServlet {
         
         Patient patient = PatientAction.connexionPatient(email, password);
         Medecin medecin = MedecinAction.connexionMedecin(email, password);
+        Administrateur admin = AdministrateurAction.connexionAdmin(email, password);
         
         
         if(patient != null) {
@@ -69,6 +72,14 @@ public class Connexion extends HttpServlet {
             session.setAttribute("prenom", medecin.getPrenom());
             session.setAttribute("type", "medecin");
             session.setAttribute("facturation", medecin.getFacturation());
+            urlRedirect = "index.jsp";
+        } else if(admin != null) {
+            HttpSession session = request.getSession(true);
+            session.setAttribute("id", admin.getId());
+            session.setAttribute("nom", admin.getNom());
+            session.setAttribute("prenom", admin.getPrenom());
+            session.setAttribute("mail", admin.getMail());
+            session.setAttribute("type", "administateur");
             urlRedirect = "index.jsp";
         }
         

@@ -12,6 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Medi - Profil</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     </head>
     <body>
         <%@include file="entete.jsp" %>
@@ -32,20 +33,24 @@ body {
             <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <c:if test="${sessionScope.nom != null}">
                 
-                    
+                <div class="text-center"> 
                     <c:if test="${sessionScope.type == 'patient'}">
-                    <h2>Bonjour M./Mme ${sessionScope.nom}</h2>
-                    <h2>Assurance :  ${sessionScope.assurance}</h2>
-                    <h2>Sexe :  ${sessionScope.sexe}</h2>
-                    <h2>Naissance :  ${sessionScope.naissance}</h2>
+                    <h1 class="display-3">Bonjour M./Mme ${sessionScope.nom}</h1>
+                    <h1 class="display-3">Assurance :  ${sessionScope.assurance}</h1>
+                    <h1 class="display-3">Sexe :  ${sessionScope.sexe}</h1>
+                    <h1 class="display-3">Naissance :  ${sessionScope.naissance}</h1>
                     </c:if>
                     <c:if test="${sessionScope.type == 'medecin'}">
-                    <h2>Bonjour Docteur ${sessionScope.nom}</h2>
-                    <h2>Facturation :  ${sessionScope.facturation}</h2>
-                    <h2>Spécialité :  ${sessionScope.specialite}</h2>
-                    <h2>Coordonnées :  ${sessionScope.coordonnes}</h2>
+                    <h1 class="display-3">Bonjour Docteur ${sessionScope.nom}</h1>
+                    <h1 class="display-3">Facturation :  ${sessionScope.facturation}</h1>
+                    <h1 class="display-3">Spécialité :  ${sessionScope.specialite}</h1>
+                    <h1 class="display-3">Coordonnées :  ${sessionScope.coordonnes}</h1>
                     </c:if>
-                
+                    <c:if test="${sessionScope.type == 'administateur'}">
+                    <h1 class="display-3">Bonjour M./Mme ${sessionScope.nom}</h1>
+                    <h1 class="display-3">Email : ${sessionScope.mail}</h1>
+                    </c:if>
+                </div>       
             </c:if>
             <c:if test="${requestScope.message != null}">
                 <h2>${requestScope.message}</h2>
