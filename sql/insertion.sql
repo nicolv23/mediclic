@@ -16,3 +16,8 @@ VALUES ("Leblanc", "Richard", "LEBR2469274", "03-11-1973", "Homme", "brichard@gm
 	   ("Carlier", "Serge", "CARS4367934", "13-09-1969", "Homme", "cserge@gmail.com", "cafelatte32"),
 	   ("Bouchard", "Cassandra", "BOUC3429670", "28-02-2001", "Femme", "cassandratec@crosemont.qc.ca", "billy43");
 
+-- Insérer des administrateurs
+INSERT INTO administrateurs (nom, prenom, mail, password)
+VALUES ("Beaulieu", "Richard", "beaulieu@gmail.com", "crosemont11"),
+	   ("Martel", "Dave", "dave@gmail.com", "rosemont11"),
+	   ("Desjardins", "Simon", "simon@hotmail.fr", "password11");

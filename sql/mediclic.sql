@@ -36,3 +36,12 @@ CREATE TABLE `mediclic`.`rdv` (
   `date` VARCHAR(45) NULL,
   `adresse` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
+  
+ -- Ajout de la table administrateurs
+CREATE TABLE `mediclic`.`administrateurs` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NULL,
+  `prenom` VARCHAR(45) NULL,
+  `mail` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
