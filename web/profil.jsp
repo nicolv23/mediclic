@@ -46,7 +46,7 @@ body {
                     <h1 class="display-3">Spécialité :  ${sessionScope.specialite}</h1>
                     <h1 class="display-3">Coordonnées :  ${sessionScope.coordonnes}</h1>
                     </c:if>
-                    <c:if test="${sessionScope.type == 'administateur'}">
+                    <c:if test="${sessionScope.type == 'administrateur'}">
                     <h1 class="display-3">Bonjour M./Mme ${sessionScope.nom}</h1>
                     <h1 class="display-3">Email : ${sessionScope.mail}</h1>
                     </c:if>
