@@ -89,6 +89,17 @@
                         </c:otherwise>    
                     </c:choose>	
                 </c:if>
+                <c:if test="${sessionScope.type == 'administrateur'}">
+                    <li class="nav-item dropdown" id="modif">
+                    <a class="nav-link dropdown-toggle" href="#" id="modifier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Modifier</a>
+                    <div class="dropdown-menu" aria-labelledby="modifier"> 
+                        <a class="dropdown-item" href="afficherPatients" class="nav-link">Liste des patients</a>
+                        <a class="dropdown-item" href="afficherMedecins" class="nav-link">Liste des médecins</a>
+                        <a class="dropdown-item" href="#" class="nav-link">Liste des cliniques</a>
+                    </div>
+                    </li>
+                </c:if>        
+                        
 	        </ul>
 	      </div>
 	    </div>
