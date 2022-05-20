@@ -14,6 +14,7 @@
     </head>
     <body>
         <%@include file="entete.jsp" %>
+        <br><br><br><br>
         <script>
             document.getElementsByClassName("active")[0].classList.remove("active");
             document.getElementById("rdv").classList.add("active");
@@ -36,16 +37,16 @@ body {
             <c:choose>
                 <c:when test="${sessionScope.nom != null}">
                     <div class="col-md-6">
-                    <input type="text" class="form-control" value="${sessionScope.prenom}" name="prenom" disabled>
+                    <input type="text" class="form-control" value="${sessionScope.prenom}" name="prenom" >
                     </div>
                     <div class="col-md-6">
-                    <input type="text" class="form-control" value="${sessionScope.nom}" name="nom" disabled>
+                    <input type="text" class="form-control" value="${sessionScope.nom}" name="nom" >
                     </div>
                     <div class="col-md-6">
-                        <input type="tel" class="form-control" placeholder="Numéro de téléphone" name="tel">
+                        <input type="tel" class="form-control" value="${sessionScope.assurance}" name="assurance">
                     </div>
                     <div class="col-md-6">
-                    <input type="text" class="form-control" value="${sessionScope.mail}" name="mail" disabled>
+                    <input type="text" class="form-control" value="${sessionScope.mail}" name="mail" >
                     </div>
                 </c:when>
                     
@@ -57,7 +58,7 @@ body {
                         <input type="text" class="form-control" placeholder="Nom">
                     </div>
                     <div class="col-md-6">
-                        <input type="tel" class="form-control" placeholder="Numéro de téléphone">
+                        <input type="tel" class="form-control" placeholder="Assurance maladie">
                     </div>
                     <div class="col-md-6">
                         <input type="email" class="form-control" placeholder="Adresse Courriel">
@@ -94,6 +95,7 @@ body {
         </div>
     </div>
 </div>
+<br><br><br><br>
     <%@include file="piedpage.jsp" %>
     </body>
 </html>
