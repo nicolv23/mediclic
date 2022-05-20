@@ -37,16 +37,22 @@ body {
             <c:choose>
                 <c:when test="${sessionScope.nom != null}">
                     <div class="col-md-6">
-                    <input type="text" class="form-control" value="${sessionScope.prenom}" name="prenom" >
+                    <input type="text" class="form-control" value="${sessionScope.prenom}" name="prenom" readonly>
                     </div>
                     <div class="col-md-6">
-                    <input type="text" class="form-control" value="${sessionScope.nom}" name="nom" >
+                    <input type="text" class="form-control" value="${sessionScope.nom}" name="nom" readonly>
                     </div>
                     <div class="col-md-6">
-                        <input type="tel" class="form-control" value="${sessionScope.assurance}" name="assurance">
+                        <input type="tel" class="form-control" value="${sessionScope.assurance}" name="assurance" readonly>
                     </div>
                     <div class="col-md-6">
-                    <input type="text" class="form-control" value="${sessionScope.mail}" name="mail" >
+                    <input type="text" class="form-control" value="${sessionScope.mail}" name="mail" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" class="form-control" placeholder="Date du Rendez Vous">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="time" class="form-control" placeholder="Heure">
                     </div>
                 </c:when>
                     
