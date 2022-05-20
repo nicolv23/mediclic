@@ -32,6 +32,24 @@ body {
             </div>
             <form action="">
                 <div class="row g-3">
+                    
+            <c:choose>
+                <c:when test="${sessionScope.nom != null}">
+                    <div class="col-md-6">
+                    <input type="text" class="form-control" value="${sessionScope.prenom}" name="prenom" disabled>
+                    </div>
+                    <div class="col-md-6">
+                    <input type="text" class="form-control" value="${sessionScope.nom}" name="nom" disabled>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="tel" class="form-control" placeholder="Numéro de téléphone" name="tel">
+                    </div>
+                    <div class="col-md-6">
+                    <input type="text" class="form-control" value="${sessionScope.mail}" name="mail" disabled>
+                    </div>
+                </c:when>
+                    
+                <c:otherwise>
                     <div class="col-md-6">
                         <input type="text" class="form-control" placeholder="Prenom">
                     </div>
@@ -50,6 +68,9 @@ body {
                     <div class="col-md-6">
                         <input type="time" class="form-control" placeholder="Heure">
                     </div>
+                </c:otherwise>    
+            </c:choose>	
+
                     <div class="col-12">
                         <select class="form-select">
                             <option selected>Raison de la consulation</option>
