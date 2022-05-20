@@ -14,6 +14,7 @@
     </head>
     <body>
         <%@include file="entete.jsp" %>
+        <br><br><br><br>
         <script>
             document.getElementsByClassName("active")[0].classList.remove("active");
             document.getElementById("rdv").classList.add("active");
@@ -32,6 +33,30 @@ body {
             </div>
             <form action="">
                 <div class="row g-3">
+                    
+            <c:choose>
+                <c:when test="${sessionScope.nom != null}">
+                    <div class="col-md-6">
+                    <input type="text" class="form-control" value="${sessionScope.prenom}" name="prenom" readonly>
+                    </div>
+                    <div class="col-md-6">
+                    <input type="text" class="form-control" value="${sessionScope.nom}" name="nom" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="tel" class="form-control" value="${sessionScope.assurance}" name="assurance" readonly>
+                    </div>
+                    <div class="col-md-6">
+                    <input type="text" class="form-control" value="${sessionScope.mail}" name="mail" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" class="form-control" placeholder="Date du Rendez Vous">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="time" class="form-control" placeholder="Heure">
+                    </div>
+                </c:when>
+                    
+                <c:otherwise>
                     <div class="col-md-6">
                         <input type="text" class="form-control" placeholder="Prenom">
                     </div>
@@ -39,7 +64,7 @@ body {
                         <input type="text" class="form-control" placeholder="Nom">
                     </div>
                     <div class="col-md-6">
-                        <input type="tel" class="form-control" placeholder="Numéro de téléphone">
+                        <input type="tel" class="form-control" placeholder="Assurance maladie">
                     </div>
                     <div class="col-md-6">
                         <input type="email" class="form-control" placeholder="Adresse Courriel">
@@ -50,6 +75,9 @@ body {
                     <div class="col-md-6">
                         <input type="time" class="form-control" placeholder="Heure">
                     </div>
+                </c:otherwise>    
+            </c:choose>	
+
                     <div class="col-12">
                         <select class="form-select">
                             <option selected>Raison de la consulation</option>
@@ -73,6 +101,7 @@ body {
         </div>
     </div>
 </div>
+<br><br><br><br>
     <%@include file="piedpage.jsp" %>
     </body>
 </html>
