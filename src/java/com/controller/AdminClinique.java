@@ -5,8 +5,8 @@
  */
 package com.controller;
 
-import com.action.MedecinAction;
-import com.model.medecin.Medecin;
+import com.action.CliniqueAction;
+import com.model.clinique.Clinique;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Joma_
  */
-public class InscriptionMedecin extends HttpServlet {
+public class AdminClinique extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,35 +33,45 @@ public class InscriptionMedecin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+            
+        String modifier = request.getParameter("modifier");
+        String supprimer = request.getParameter("supprimer");
+        String cliniqueModifie = request.getParameter("cliniqueModifie");
+        String cliniqueAjoute = request.getParameter("cliniqueAjoute");
+        String idRecu = request.getParameter("id");
+        int id = 0;
+        if(idRecu != null) {
+            id = Integer.parseInt(idRecu);
+        }
         
         String nom = request.getParameter("nom");
-        String prenom = request.getParameter("prenom");
-        String specialite = request.getParameter("specialite");
-        String numpro = request.getParameter("numpro");
-        double facturation = Double.parseDouble(request.getParameter("facturation"));
         String coordonnees = request.getParameter("coordonnees");
-        String lieuJob = request.getParameter("lieuJob");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String sexe = request.getParameter("sexe");
-        String message = "Inscription effectuée !";
-        String messageAdmin = "Médecin ajouté !";
-        String ajoutAdmin = request.getParameter("ajoutAdmin");
+        String services = request.getParameter("services");
         
-        Medecin medecin = new Medecin(nom, prenom, specialite, numpro, coordonnees, facturation, lieuJob, sexe, email, password);
-        
-        boolean succes = MedecinAction.inscriptionMedecin(medecin);
-        if(succes) {
-            if(ajoutAdmin != null) {
-                request.setAttribute("message", messageAdmin);
-                request.getRequestDispatcher("afficherMedecins").forward(request, response);
-            } else {
-                request.setAttribute("messageInscription", message);
-                request.getRequestDispatcher("connexion.jsp").forward(request, response);
+        if(modifier != null) {
+            request.setAttribute("id", id);
+            request.getRequestDispatcher("modifierClinique.jsp").forward(request, response);
+        } else if(supprimer != null) {
+            boolean CliniqueSupprime = CliniqueAction.supprimerClinique(id);
+            if(CliniqueSupprime) {
+                request.setAttribute("message", "Clinique #"+id+" supprimé avec succès !");
+                request.getRequestDispatcher("afficherCliniques").forward(request, response);
             }
-            
-        }
-            
+        } else if(cliniqueModifie != null) {
+            Clinique clinique = new Clinique(id, nom, coordonnees, services);
+            boolean cliniqueModif = CliniqueAction.misajourClinique(clinique);
+            if(cliniqueModif) {
+                request.setAttribute("message", "Clinique #"+id+" modifié avec succès !");
+                request.getRequestDispatcher("afficherCliniques").forward(request, response);
+            }
+        } else if(cliniqueAjoute != null) {
+            Clinique clinique = new Clinique(nom, coordonnees, services);
+            boolean cliniqueAjout = CliniqueAction.ajouterClinique(clinique);
+            if(cliniqueAjout) {
+                request.setAttribute("message", "Clinique ajoutée !");
+                request.getRequestDispatcher("afficherCliniques").forward(request, response);
+            }
+        }     
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

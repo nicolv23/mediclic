@@ -37,11 +37,19 @@ CREATE TABLE `mediclic`.`rdv` (
   `adresse` VARCHAR(45) NULL,
   PRIMARY KEY (`id`));
   
- -- Ajout de la table administrateurs
+-- Ajout de la table administrateurs
 CREATE TABLE `mediclic`.`administrateurs` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NULL,
   `prenom` VARCHAR(45) NULL,
   `mail` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+  
+-- Ajout de la table cliniques
+CREATE TABLE `mediclic`.`cliniques` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NULL,
+  `coordonnees` VARCHAR(45) NULL,
+  `services` VARCHAR(100) NULL,
   PRIMARY KEY (`id`));

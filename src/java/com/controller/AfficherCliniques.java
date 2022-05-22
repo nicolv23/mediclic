@@ -5,10 +5,11 @@
  */
 package com.controller;
 
-import com.action.MedecinAction;
-import com.model.medecin.Medecin;
+import com.action.CliniqueAction;
+import com.model.clinique.Clinique;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Joma_
  */
-public class InscriptionMedecin extends HttpServlet {
+public class AfficherCliniques extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,35 +34,10 @@ public class InscriptionMedecin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
-        String nom = request.getParameter("nom");
-        String prenom = request.getParameter("prenom");
-        String specialite = request.getParameter("specialite");
-        String numpro = request.getParameter("numpro");
-        double facturation = Double.parseDouble(request.getParameter("facturation"));
-        String coordonnees = request.getParameter("coordonnees");
-        String lieuJob = request.getParameter("lieuJob");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String sexe = request.getParameter("sexe");
-        String message = "Inscription effectuée !";
-        String messageAdmin = "Médecin ajouté !";
-        String ajoutAdmin = request.getParameter("ajoutAdmin");
-        
-        Medecin medecin = new Medecin(nom, prenom, specialite, numpro, coordonnees, facturation, lieuJob, sexe, email, password);
-        
-        boolean succes = MedecinAction.inscriptionMedecin(medecin);
-        if(succes) {
-            if(ajoutAdmin != null) {
-                request.setAttribute("message", messageAdmin);
-                request.getRequestDispatcher("afficherMedecins").forward(request, response);
-            } else {
-                request.setAttribute("messageInscription", message);
-                request.getRequestDispatcher("connexion.jsp").forward(request, response);
-            }
             
-        }
-            
+        List<Clinique> listeCliniques = CliniqueAction.afficherTousCliniques();
+        request.setAttribute("listeCliniques", listeCliniques);
+        request.getRequestDispatcher("afficherCliniques.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
