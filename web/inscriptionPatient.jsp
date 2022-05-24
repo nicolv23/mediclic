@@ -19,6 +19,15 @@
         document.getElementById("connexion").classList.add("active");
         document.getElementById("contact").classList.remove("active");
         document.getElementById("connexion").innerHTML = "<a href=\"connexion.jsp\" class=\"nav-link\">S'inscrire</a>";
+        
+        function montrerMotDePasse() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
         </script>
     <style>
 body {
@@ -63,6 +72,7 @@ body {
                 <div class="form-group last mb-3">
                   <label for="password">Mot de passe</label>
                   <input type="password" class="form-control" placeholder="Votre mot de passe" name="password" id="password" required>
+                  <input type="checkbox" onclick="montrerMotDePasse()"> Montrer mot de passe
                 </div>
                 <div class="form-group last mb-3">
                   <label for="cpassword">Confirmer votre mot de passe</label>

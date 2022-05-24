@@ -39,21 +39,6 @@ public class Medecin {
         this.mail = mail;
         this.password = password;
     }
-
-    public Medecin(int id, String nom, String prenom, String specialite, String numpro, String coordonnes, double facturation, String lieuTravail, String mail, String password) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.specialite = specialite;
-        this.numpro = numpro;
-        this.coordonnes = coordonnes;
-        this.facturation = facturation;
-        this.lieuTravail = lieuTravail;
-        this.mail = mail;
-        this.password = password;
-    }
-    
-    
     
     
     
