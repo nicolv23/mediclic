@@ -61,9 +61,6 @@
                 </c:forEach>
             </tbody>
         </table>
-        <center>
-            <a href="ajoutPatient.jsp" class="btn btn-primary" role="button">Ajouter un patient</a>
-        </center>
         </div>    
         
 

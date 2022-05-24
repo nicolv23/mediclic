@@ -25,6 +25,9 @@ public class PatientImplDao implements PatientDao{
     private static final String SQL_CONNEXION = "SELECT * FROM patients WHERE mail=? AND password=?";
     private static final String SQL_INSERT = "INSERT INTO patients(nom, prenom, assurance, naissance, sexe, mail, password) "
             + "VALUES(?, ?, ?, ?, ?, ?, ?)";
+    private static final String SQL_DELETE = "DELETE FROM patients WHERE id=?";
+    private static final String SQL_UPDATE = "UPDATE patients SET nom=?, prenom=?, assurance=?, naissance=?, mail=?, "
+            + "password=? WHERE id=?";
 
     @Override
     public List<Patient> findAll() {
@@ -115,6 +118,58 @@ public class PatientImplDao implements PatientDao{
             Logger.getLogger(PatientImplDao.class.getName()).log(Level.SEVERE, null, ex);
         }
         if(nbLigne > 0) {
+            retour = true;
+        }
+        ConnexionBD.closeConnection();
+        return retour;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        boolean retour = false;
+        int nbLigne = 0;
+        PreparedStatement ps;
+        try {
+            ps = ConnexionBD.getConnection().prepareStatement(SQL_DELETE);
+            ps.setInt(1, id);
+
+            nbLigne = ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        if (nbLigne > 0) {
+            retour = true;
+        }
+        ConnexionBD.closeConnection();
+        return retour;
+    }
+
+    @Override
+    public boolean update(Patient patient) {
+        boolean retour = false;
+        int nbLigne = 0;
+        PreparedStatement ps;
+        try {
+            ps = ConnexionBD.getConnection().prepareStatement(SQL_UPDATE);
+
+            ps.setString(1, patient.getNom());
+            ps.setString(2, patient.getPrenom());
+            ps.setString(3, patient.getAssurance());
+            ps.setString(4, patient.getNaissance());
+            ps.setString(5, patient.getMail());
+            ps.setString(6, patient.getPassword());
+            ps.setInt(7, patient.getId());
+
+            nbLigne = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            Logger.getLogger(PatientImplDao.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+        if (nbLigne > 0) {
             retour = true;
         }
         ConnexionBD.closeConnection();

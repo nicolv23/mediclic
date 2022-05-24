@@ -79,7 +79,7 @@ public class Connexion extends HttpServlet {
             session.setAttribute("nom", admin.getNom());
             session.setAttribute("prenom", admin.getPrenom());
             session.setAttribute("mail", admin.getMail());
-            session.setAttribute("type", "administateur");
+            session.setAttribute("type", "administrateur");
             urlRedirect = "index.jsp";
         }
         

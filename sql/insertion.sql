@@ -21,9 +21,3 @@ INSERT INTO administrateurs (nom, prenom, mail, password)
 VALUES ("Beaulieu", "Richard", "beaulieu@gmail.com", "crosemont11"),
 	   ("Martel", "Dave", "dave@gmail.com", "rosemont11"),
 	   ("Desjardins", "Simon", "simon@hotmail.fr", "password11");
-	   
--- Insérer des cliniques
-INSERT INTO cliniques (nom, coordonnees, services)
-VALUES ("Hôpital Marie-Clarac", "3530 Boul. Gouin E", "Psychologie, Soins infirmiers, Physiothérapie"),
-	   ("Hôpital Maisonneuve-Rosemont", "5415 Bd de l'Assomption", "Urgence, Suivi de grossesse, Radiologie"),
-	   ("Hôpital Santa Cabrini", "5655 Rue Saint-Zotique E", "Prise de sang, Urgence, Médecine nucléaire");

@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,37 +35,10 @@ body {
                 
                 <div class="text-center"> 
                     <c:if test="${sessionScope.type == 'patient'}">
-                        <c:if test="${sessionScope.sexe == 'Homme'}">
-                               <h1 class="display-3">Bonjour M. ${sessionScope.nom}</h1>
-                        </c:if>
-                        <c:if test="${sessionScope.sexe == 'Femme'}">
-                               <h1 class="display-3">Bonjour Mme. ${sessionScope.nom}</h1>
-                        </c:if>
+                    <h1 class="display-3">Bonjour M./Mme ${sessionScope.nom}</h1>
                     <h1 class="display-3">Assurance :  ${sessionScope.assurance}</h1>
                     <h1 class="display-3">Sexe :  ${sessionScope.sexe}</h1>
                     <h1 class="display-3">Naissance :  ${sessionScope.naissance}</h1>
-                    <h1 class="display-3">Mettre a jour les documents de ${sessionScope.prenom} ${sessionScope.nom}</h1>
-                    <form action="FileUploadHandler" enctype="multipart/form-data" method="post">
-                                   <h3>Choisir<input type="file" name="file2" /><br>
-                                       <input type="submit" value="Télécharger" /> </h3>
-                                   <%
-                                   String file_name=(String)request.getParameter("filename");
-                                   if(file_name!=null){
-                                   out.println(file_name+" Fichier mis a jour");
-                                   }
-                               %>
-                               </form> 
-                                <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
-         url = "jdbc:mysql://127.0.0.1:3306/mediclic?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false"
-         user = "root"  password = "root"/>
-                <sql:query dataSource = "${snapshot}" var = "result">
-         SELECT * from mediclic.medecins;
-      </sql:query>
-         <c:forEach var = "rows" items="${result.rows}">
-                      <a class="dropdown-item" href="rendezVous.jsp" class="nav-link">${rows.prenom} ${rows.nom}</a>
-                          <%--<c:out value = "${row.prenom}"/> <span>&nbsp;</span><c:out value = "${row.nom}"/>--%>
-                      </a>
-                  </c:forEach>
                     </c:if>
                     <c:if test="${sessionScope.type == 'medecin'}">
                     <h1 class="display-3">Bonjour Docteur ${sessionScope.nom}</h1>
@@ -74,13 +46,8 @@ body {
                     <h1 class="display-3">Spécialité :  ${sessionScope.specialite}</h1>
                     <h1 class="display-3">Coordonnées :  ${sessionScope.coordonnes}</h1>
                     </c:if>
-                    <c:if test="${sessionScope.type == 'administateur'}">
-                        <c:if test="${sessionScope.sexe == 'Homme'}">
-                               <h1 class="display-3">Bonjour M. ${sessionScope.nom}</h1>
-                        </c:if>
-                        <c:if test="${sessionScope.sexe == 'Femme'}">
-                               <h1 class="display-3">Bonjour Mme. ${sessionScope.nom}</h1>
-                        </c:if>
+                    <c:if test="${sessionScope.type == 'administrateur'}">
+                    <h1 class="display-3">Bonjour M./Mme ${sessionScope.nom}</h1>
                     <h1 class="display-3">Email : ${sessionScope.mail}</h1>
                     </c:if>
                 </div>       

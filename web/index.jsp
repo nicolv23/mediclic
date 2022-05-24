@@ -35,14 +35,8 @@ body {
         <div class="text-center">
             <h1 class="display-1">Bienvenue chez MediClic !</h1>
             <c:if test="${sessionScope.nom != null}">
-                <c:if test="${sessionScope.sexe == 'Homme'}">
-                               <h1 class="display-3">Bonjour M. ${sessionScope.nom}</h1>
-                               <h1 class="display-3">( ${sessionScope.type} )</h1>
-                        </c:if>
-                        <c:if test="${sessionScope.sexe == 'Femme'}">
-                               <h1 class="display-3">Bonjour Mme. ${sessionScope.nom}</h1>
-                               <h1 class="display-3">( ${sessionScope.type} )</h1>
-                        </c:if>
+                <h1 class="display-2">Bonjour M./Mme ${sessionScope.nom}</h1>
+                <h1 class="display-3">( ${sessionScope.type} )</h1>
             </c:if>
             <c:if test="${requestScope.message != null}">
                 <h1 class="display-2">${requestScope.message}</h1>

@@ -51,19 +51,8 @@ body {
                 </div>
                 <div class="form-group first">
                   <label for="specialite">Spécialité</label>
-                  <%--
-                    <select class="form-select" name="specialite" id="specialite" required>
-                            <option value="1">Cardiologue</option>
-                            <option value="2">Neurologue</option>
-                            <option value="3">Dermatologue</option>
-                            <option value="4">Médecin de famille</option>
-                            <option value="5">Nutritionniste</option>
-                            <option value="6">Chirurgien</option>
-                            <option value="7">Pédiatre</option>
-                    </select>
-                  --%>
-                  <input type="text" class="form-control" placeholder="Specialité" name="specialite" id="specialite" required>
-                    </div>
+                  <input type="text" class="form-control" placeholder="Chirurgien" name="specialite" id="specialite" required>
+                </div>
                 <div class="form-group first">
                   <label for="numpro">Numéro de téléphone professionnel</label>
                   <input type="text" class="form-control" placeholder="(514)826-2123" name="numpro" id="numpro" required>

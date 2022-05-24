@@ -94,7 +94,7 @@ body {
                     </div>
                     <div class="col-12 mt-5">                        
                         <button type="submit" class="btn btn-primary float-end">Confirmez Rendez Vous</button>
-                        <button type="button" class="btn btn-outline-secondary float-end me-2" href="index.jsp">Annuler</button>
+                        <button type="button" class="btn btn-outline-secondary float-end me-2">Annuler</button>
                     </div>
                 </div>
             </form>

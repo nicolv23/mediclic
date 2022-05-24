@@ -42,21 +42,13 @@ public class InscriptionPatient extends HttpServlet {
         String password = request.getParameter("password");
         String sexe = request.getParameter("sexe");
         String message = "Inscription effectuée !";
-        String messageAdmin = "Patient ajouté !";
-        String ajoutAdmin = request.getParameter("ajoutAdmin");
         
         Patient patient = new Patient(nom, prenom, assurance, naissance, sexe, email, password);
         
         boolean succes = PatientAction.inscriptionPatient(patient);
         if(succes) {
-            if(ajoutAdmin != null) {
-                request.setAttribute("message", messageAdmin);
-                request.getRequestDispatcher("afficherPatients").forward(request, response);
-            } else {
-                request.setAttribute("messageInscription", message);
-                request.getRequestDispatcher("connexion.jsp").forward(request, response);
-            }
-            
+            request.setAttribute("messageInscription", message);
+            request.getRequestDispatcher("connexion.jsp").forward(request, response);
         }
     }
 

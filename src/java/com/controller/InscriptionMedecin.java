@@ -45,21 +45,13 @@ public class InscriptionMedecin extends HttpServlet {
         String password = request.getParameter("password");
         String sexe = request.getParameter("sexe");
         String message = "Inscription effectuée !";
-        String messageAdmin = "Médecin ajouté !";
-        String ajoutAdmin = request.getParameter("ajoutAdmin");
         
         Medecin medecin = new Medecin(nom, prenom, specialite, numpro, coordonnees, facturation, lieuJob, sexe, email, password);
         
         boolean succes = MedecinAction.inscriptionMedecin(medecin);
         if(succes) {
-            if(ajoutAdmin != null) {
-                request.setAttribute("message", messageAdmin);
-                request.getRequestDispatcher("afficherMedecins").forward(request, response);
-            } else {
-                request.setAttribute("messageInscription", message);
-                request.getRequestDispatcher("connexion.jsp").forward(request, response);
-            }
-            
+            request.setAttribute("messageInscription", message);
+            request.getRequestDispatcher("connexion.jsp").forward(request, response);
         }
             
     }

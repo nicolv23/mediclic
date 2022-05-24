@@ -46,20 +46,20 @@
                                     
 
         </form> 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active" id="accueil"><a href="index.jsp" class="nav-link">Accueil</a></li>
-	        	<li class="nav-item dropdown">
-                             <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
          url = "jdbc:mysql://127.0.0.1:3306/mediclic?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false"
          user = "root"  password = "root"/>
                 <sql:query dataSource = "${snapshot}" var = "result">
          SELECT * from mediclic.medecins;
       </sql:query>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active" id="accueil"><a href="index.jsp" class="nav-link">Accueil</a></li>
+	        	<li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prendre un rendez-vous</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <c:forEach var = "rows" items="${result.rows}">
-                      <a class="dropdown-item" href="rendezVous.jsp" class="nav-link">${rows.prenom} ${rows.nom}</a>
+                  <c:forEach var = "row" items="${result.rows}">
+                      <a class="dropdown-item" href="rendezVous.jsp" class="nav-link">${row.prenom} ${row.nom}</a>
                           <%--<c:out value = "${row.prenom}"/> <span>&nbsp;</span><c:out value = "${row.nom}"/>--%>
                       </a>
                   </c:forEach>
@@ -77,7 +77,6 @@
             </c:choose>	
                   
 	          <li class="nav-item" id="contact"><a href="contact.jsp" class="nav-link">Nous contacter</a></li>
-                  <li class="nav-item" id="calendrier"><a href="disponibilitesHoraire.jsp" class="nav-link">Disponibilites</a></li>
                 <c:if test="${sessionScope.nom != null}">
                     <c:choose>
                         <c:when test="${sessionScope.sexe == 'Femme'}">
@@ -90,6 +89,17 @@
                         </c:otherwise>    
                     </c:choose>	
                 </c:if>
+                <c:if test="${sessionScope.type == 'administrateur'}">
+                    <li class="nav-item dropdown" id="modif">
+                    <a class="nav-link dropdown-toggle" href="#" id="modifier" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Modifier</a>
+                    <div class="dropdown-menu" aria-labelledby="modifier"> 
+                        <a class="dropdown-item" href="afficherPatients" class="nav-link">Liste des patients</a>
+                        <a class="dropdown-item" href="afficherMedecins" class="nav-link">Liste des médecins</a>
+                        <a class="dropdown-item" href="#" class="nav-link">Liste des cliniques</a>
+                    </div>
+                    </li>
+                </c:if>        
+                        
 	        </ul>
 	      </div>
 	    </div>
