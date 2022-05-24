@@ -13,7 +13,5 @@ public interface PatientDao {
      List<Patient> findAll();
      Patient isExiste(String email, String password);
      boolean create(Patient patient);
-     boolean delete(int id);
-     boolean update(Patient patient);
      
 }

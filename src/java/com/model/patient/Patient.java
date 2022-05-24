@@ -33,16 +33,6 @@ public class Patient {
         this.mail = mail;
         this.password = password;
     }
-
-    public Patient(int id, String nom, String prenom, String assurance, String naissance, String mail, String password) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.assurance = assurance;
-        this.naissance = naissance;
-        this.mail = mail;
-        this.password = password;
-    }
     
     
 

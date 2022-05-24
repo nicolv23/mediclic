@@ -32,14 +32,4 @@ public class MedecinAction {
         return succes;
     }
     
-    public static boolean supprimerMedecin(int id) {
-        boolean succes = dao.delete(id);
-        return succes;
-    }
-    
-    public static boolean misajourMedecin(Medecin medecin) {
-        boolean succes = dao.update(medecin);
-        return succes;
-    }
-    
 }

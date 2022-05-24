@@ -20,22 +20,6 @@
         <servlet-name>InscriptionMedecin</servlet-name>
         <servlet-class>com.controller.InscriptionMedecin</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>AfficherPatients</servlet-name>
-        <servlet-class>com.controller.AfficherPatients</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AfficherMedecins</servlet-name>
-        <servlet-class>com.controller.AfficherMedecins</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AdminPatient</servlet-name>
-        <servlet-class>com.controller.AdminPatient</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AdminMedecin</servlet-name>
-        <servlet-class>com.controller.AdminMedecin</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>Connexion</servlet-name>
         <url-pattern>/connexion</url-pattern>
@@ -55,22 +39,6 @@
     <servlet-mapping>
         <servlet-name>InscriptionMedecin</servlet-name>
         <url-pattern>/inscriptionMedecin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AfficherPatients</servlet-name>
-        <url-pattern>/afficherPatients</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AfficherMedecins</servlet-name>
-        <url-pattern>/afficherMedecins</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AdminPatient</servlet-name>
-        <url-pattern>/adminPatient</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AdminMedecin</servlet-name>
-        <url-pattern>/adminMedecin</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

@@ -24,9 +24,7 @@ public class MedecinImplDao implements MedecinDao{
     private static final String SQL_CONNEXION = "SELECT * FROM medecins WHERE mail=? AND password=?";
     private static final String SQL_INSERT = "INSERT INTO medecins(nom, prenom, specialite, numpro, coordonnes, facturation, "
             + "lieuTravail, sexe, mail, password) VALUES(?,?,?,?,?,?,?,?,?,?)";
-    private static final String SQL_DELETE = "DELETE FROM medecins WHERE id=?";
-    private static final String SQL_UPDATE = "UPDATE medecins SET nom=?, prenom=?, specialite=?, numpro=?, coordonnes=?, "
-            + "facturation=?, lieuTravail=?, mail=?, password=? WHERE id=?";
+    
 
     @Override
     public List<Medecin> findAll() {
@@ -49,7 +47,6 @@ public class MedecinImplDao implements MedecinDao{
             medecin.setNumpro(resultat.getString("numpro"));
             medecin.setCoordonnes(resultat.getString("coordonnes"));
             medecin.setFacturation(resultat.getDouble("facturation"));
-            medecin.setLieuTravail(resultat.getString("lieuTravail"));
             medecin.setSexe(resultat.getString("sexe"));
             medecin.setMail(resultat.getString("mail"));
             medecin.setPassword(resultat.getString("password"));
@@ -129,61 +126,6 @@ public class MedecinImplDao implements MedecinDao{
         ConnexionBD.closeConnection();
         return retour;
         
-    }
-
-    @Override
-    public boolean delete(int id) {
-        boolean retour = false;
-        int nbLigne = 0;
-        PreparedStatement ps;
-        try {
-            ps = ConnexionBD.getConnection().prepareStatement(SQL_DELETE);
-            ps.setInt(1, id);
-
-            nbLigne = ps.executeUpdate();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        if (nbLigne > 0) {
-            retour = true;
-        }
-        ConnexionBD.closeConnection();
-        return retour;
-    }
-
-    @Override
-    public boolean update(Medecin medecin) {
-        boolean retour = false;
-        int nbLigne = 0;
-        PreparedStatement ps;
-        try {
-            ps = ConnexionBD.getConnection().prepareStatement(SQL_UPDATE);
-
-            ps.setString(1, medecin.getNom());
-            ps.setString(2, medecin.getPrenom());
-            ps.setString(3, medecin.getSpecialite());
-            ps.setString(4, medecin.getNumpro());
-            ps.setString(5, medecin.getCoordonnes());
-            ps.setDouble(6, medecin.getFacturation());
-            ps.setString(7, medecin.getLieuTravail());
-            ps.setString(8, medecin.getMail());
-            ps.setString(9, medecin.getPassword());
-            ps.setInt(10, medecin.getId());
-
-            nbLigne = ps.executeUpdate();
-
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            Logger.getLogger(MedecinImplDao.class.getName()).log(Level.SEVERE, null, e);
-        }
-
-        if (nbLigne > 0) {
-            retour = true;
-        }
-        ConnexionBD.closeConnection();
-        return retour;
     }
     
    
