@@ -3,19 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/web/contact.jsp</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/web/entete.jsp</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/sql/insertion.sql</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/controller/Connexion.java</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/web/afficherPatients.jsp</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/sql/mediclic.sql</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/web/modifierPatient.jsp</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/controller/AdminPatient.java</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/action/AdministrateurAction.java</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/controller/AdminMedecin.java</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/action/MedecinAction.java</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/web/rendezVous.jsp</file>
-            <file>file:/C:/Users/Volta/Documents/GitHub/projet-web/src/java/com/dao/patient/RendezVousDao.java</file>
+            <file>file:/C:/NetBeansProjects/projet-web/web/afficherPatients.jsp</file>
         </group>
     </open-files>
 </project-private>

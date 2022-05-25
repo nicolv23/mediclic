@@ -32,32 +32,34 @@
                             </div>
                             <form action="adminPatient" method="post">
                                 <input type="hidden" name="id" value="${requestScope.id}">
-
+                                <c:choose>
+                                <c:when test="${patient != null}">    
                                 <div class="form-group first">
                                     <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" placeholder="Nouveau nom" name="nom" id="nom" required>
+                                    <input type="text" class="form-control" value="${patient.nom}" placeholder="Nouveau nom" name="nom" id="nom" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" placeholder="Nouveau prénom" name="prenom" id="prenom" required>
+                                    <input type="text" class="form-control" value="${patient.prenom}" placeholder="Nouveau prénom" name="prenom" id="prenom" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="assurance">Numéro d'assurance maladie</label>
-                                    <input type="text" class="form-control" placeholder="BOUF94011419" name="assurance" id="assurance" required>
+                                    <input type="text" class="form-control" value="${patient.assurance}" placeholder="BOUF94011419" name="assurance" id="assurance" required>
                                 </div>
                                 <div class="form-group first">
                                     <label for="naissance">Date de naissance</label>
-                                    <input type="text" class="form-control" placeholder="30-01-2000" name="naissance" id="naissance" required>
+                                    <input type="text" class="form-control" value="${patient.naissance}" placeholder="30-01-2000" name="naissance" id="naissance" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="username">Adresse courriel</label>
-                                    <input type="email" class="form-control" placeholder="nouveau-mail@gmail.com" name="email" id="username" required>
+                                    <input type="email" class="form-control" value="${patient.mail}" placeholder="nouveau-mail@gmail.com" name="email" id="username" required>
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="password">Mot de passe</label>
-                                    <input type="password" class="form-control" placeholder="Nouveau mot de passe" name="password" id="password" required>
+                                    <input type="password" class="form-control" value="${patient.password}" placeholder="Nouveau mot de passe" name="password" id="password" required>
                                 </div>
-                               
+                                </c:when>
+                               </c:choose>
                                 
 
                                 <br>

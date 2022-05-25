@@ -28,6 +28,7 @@ public class PatientImplDao implements PatientDao{
     private static final String SQL_DELETE = "DELETE FROM patients WHERE id=?";
     private static final String SQL_UPDATE = "UPDATE patients SET nom=?, prenom=?, assurance=?, naissance=?, mail=?, "
             + "password=? WHERE id=?";
+    private static final String SQL_SELECT_ID = "SELECT * FROM patients WHERE id=?";
 
     @Override
     public List<Patient> findAll() {
@@ -174,6 +175,36 @@ public class PatientImplDao implements PatientDao{
         }
         ConnexionBD.closeConnection();
         return retour;
+    }
+
+    @Override
+    public Patient findById(int id) {
+        Patient patient = null; 
+        try {
+   
+            
+            PreparedStatement ps = ConnexionBD.getConnection().prepareStatement(SQL_SELECT_ID);
+            ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
+            
+            while (result.next()) {
+                
+                patient = new Patient();
+                patient.setID(result.getInt("id") );
+                patient.setNom(result.getString("nom"));
+                patient.setPrenom(result.getString("prenom"));
+                patient.setAssurance(result.getString("assurance"));
+                patient.setNaissance(result.getString("naissance"));
+                patient.setSexe(result.getString("sexe"));
+                patient.setMail(result.getString("mail"));
+                patient.setPassword(result.getString("password"));
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PatientImplDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       ConnexionBD.closeConnection();
+       return patient; 
     }
     
 }

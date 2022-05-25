@@ -45,3 +45,11 @@ CREATE TABLE `mediclic`.`administrateurs` (
   `mail` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
+  
+  -- Ajout de la table cliniques
+CREATE TABLE `mediclic`.`cliniques` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(45) NULL,
+  `coordonnees` VARCHAR(45) NULL,
+  `services` VARCHAR(100) NULL,
+  PRIMARY KEY (`id`));
