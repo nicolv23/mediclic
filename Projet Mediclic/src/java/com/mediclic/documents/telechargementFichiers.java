@@ -1,0 +1,125 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
+
+package com.mediclic.documents;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author Metafora
+ */
+public class telechargementFichiers extends HttpServlet {
+
+    public telechargementFichiers() {
+        super();
+    }
+
+    
+    
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+         response.setContentType("text/html;charset=UTF-8");
+       try(PrintWriter out = response.getWriter()){
+           
+       
+        String nomFichier = request.getParameter("patients");
+            
+            String chemin = getServletContext().getRealPath("/" + "fichiers" + File.separator + nomFichier);
+            
+            File fichier = new File(chemin);
+            if(fichier.exists()){
+                response.setContentType("APPLICATION/OCTET-STREAM");
+                response.setContentLength((int) fichier.length());
+                
+                String cle = "Content-Disposition";
+                String valeur = String.format("attachment; filename=\"%s\"", fichier.getName());
+                response.setHeader(cle, valeur);
+                
+                FileInputStream ins = new FileInputStream(chemin);
+                
+                int i;
+                
+                while ((i = ins.read()) != -1){
+                out.write(i);
+                }
+                ins.close();
+                out.close();
+            }
+            else{
+                out.println("Fichiers non disponible");
+            }
+           
+            
+         
+    }
+    }
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+    */
+   @Override
+     protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        PrintWriter out = response.getWriter();
+        String fileName = "Patients_mediclic.zip";
+        String filePath = "C:\\Patients_mediclic";
+        response.setContentType("APPLICATION/OCTET-STREAM");
+        response.setHeader("Content-Disposition", "attachment; filename=\""+fileName+"\"");
+        FileInputStream fichier = new FileInputStream(filePath+fileName);
+        int i;
+        while((i=fichier.read()) != -1){
+            out.write(i);
+        }
+        out.close();
+        fichier.close();
+    }
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
+}
