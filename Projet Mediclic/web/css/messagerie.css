@@ -1,0 +1,50 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 24-May-2022, 17:19:45
+    Author     : Metafora
+*/
+
+.logo_messagerie {
+      position: fixed;
+      right: 20px;
+      bottom: 0;
+      font-size: 75px;
+      color: turquoise;
+      cursor: pointer;
+      z-index: 800;
+  }
+  
+.boite_messagerie{
+     width: 400px;
+	height: 80vh;
+	position: fixed;
+	bottom: 100px;
+	right: 30px;
+	background: lightgray;
+	z-index: 1000;
+	transition: all 0.3s ease-out;
+	transform: scaleY(0);
+  }
+  
+.boite_messagerie.active {
+    transform: scaleY(1);
+}
+  
+#messages{
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.my-conv-form-wrapper textarea{
+    height: 30px;
+    background: lightgray;
+    overflow: hidden;
+    resize: none;
+}
+
+.hidden{
+    display: none !important;
+}
