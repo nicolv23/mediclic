@@ -50,7 +50,8 @@ public class AdminMedecin extends HttpServlet {
         String password = request.getParameter("password");
         
         if(modifier != null) {
-            request.setAttribute("id", id);
+            Medecin medecin = MedecinAction.rechercherMedecinParId(id);
+            request.setAttribute("medecin", medecin);
             request.getRequestDispatcher("modifierMedecin.jsp").forward(request, response);
         } else if(supprimer != null) {
             boolean MedecinSupprime = MedecinAction.supprimerMedecin(id);

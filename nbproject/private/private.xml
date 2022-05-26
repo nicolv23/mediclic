@@ -3,7 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/NetBeansProjects/projet-web/web/afficherPatients.jsp</file>
+            <file>file:/C:/NetBeansProjects/projet-web/web/modifierClinique.jsp</file>
+            <file>file:/C:/NetBeansProjects/projet-web/web/modifierMedecin.jsp</file>
+            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/controller/AdminMedecin.java</file>
+            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/controller/AdminClinique.java</file>
+            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/controller/AdminPatient.java</file>
+            <file>file:/C:/NetBeansProjects/projet-web/src/java/com/action/CliniqueAction.java</file>
         </group>
     </open-files>
 </project-private>

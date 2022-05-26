@@ -11,6 +11,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Medi - M-Inscription</title>
         <link rel="stylesheet" href="css/inscription.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+       
+        <style>
+            <%@ include file="css/messagerie.css"%>
+</style>
+<link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script type="text/javascript" src="js/messages.js"></script>
     </head>
     <body>
         <%@include file="entete.jsp" %>
@@ -23,7 +35,7 @@
         <style>
 body {
     height: 100%;
-    background-image: url("images/mediclic_background.jpg");
+    background-image: url("images/mediclic.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -37,4 +37,9 @@ public class CliniqueAction {
         return succes;
     }
     
+    public static Clinique rechercherCliniqueParId(int id) {
+        Clinique clinique = dao.findById(id);
+        return clinique;
+    }
+    
 }

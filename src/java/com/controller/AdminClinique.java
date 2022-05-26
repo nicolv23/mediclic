@@ -49,7 +49,8 @@ public class AdminClinique extends HttpServlet {
         String services = request.getParameter("services");
         
         if(modifier != null) {
-            request.setAttribute("id", id);
+            Clinique clinique = CliniqueAction.rechercherCliniqueParId(id);
+            request.setAttribute("clinique", clinique);
             request.getRequestDispatcher("modifierClinique.jsp").forward(request, response);
         } else if(supprimer != null) {
             boolean CliniqueSupprime = CliniqueAction.supprimerClinique(id);

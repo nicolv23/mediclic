@@ -27,6 +27,7 @@ public class CliniqueImplDao implements CliniqueDao {
             + "services=? WHERE id=?";
     private static final String SQL_INSERT = "INSERT INTO cliniques(nom, coordonnees, "
             + "services) VALUES(?,?,?)";
+    private static final String SQL_SELECT_ID = "SELECT * FROM cliniques WHERE id=?";
 
     @Override
     public List<Clinique> findAll() {
@@ -128,6 +129,31 @@ public class CliniqueImplDao implements CliniqueDao {
         }
         ConnexionBD.closeConnection();
         return retour;
+    }
+
+    @Override
+    public Clinique findById(int id) {
+        Clinique clinique = null; 
+        try {
+   
+            
+            PreparedStatement ps = ConnexionBD.getConnection().prepareStatement(SQL_SELECT_ID);
+            ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
+            
+            while (result.next()) {
+                
+                clinique = new Clinique();
+                clinique.setId(result.getInt("id"));
+                clinique.setNom(result.getString("nom"));
+                clinique.setCoordonnees(result.getString("coordonnees"));
+                clinique.setServices(result.getString("services")); 
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CliniqueImplDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       ConnexionBD.closeConnection();
+       return clinique; 
     }
     
 }

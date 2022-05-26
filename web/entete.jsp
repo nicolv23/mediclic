@@ -77,6 +77,8 @@
             </c:choose>	
                   
 	          <li class="nav-item" id="contact"><a href="contact.jsp" class="nav-link">Nous contacter</a></li>
+                  <li class="nav-item" id="horaire"><a href="horaire.jsp" class="nav-link">Horaire</a></li>
+                  <li class="nav-item" id="services"><a href="services.jsp" class="nav-link">Nos Services</a></li>
                 <c:if test="${sessionScope.nom != null}">
                     <c:choose>
                         <c:when test="${sessionScope.sexe == 'Femme'}">
@@ -95,8 +97,7 @@
                     <div class="dropdown-menu" aria-labelledby="modifier"> 
                         <a class="dropdown-item" href="afficherPatients" class="nav-link">Liste des patients</a>
                         <a class="dropdown-item" href="afficherMedecins" class="nav-link">Liste des médecins</a>
-                        <a class="dropdown-item" href="afficherCliniques" class="nav-link">Liste des cliniques</a>
-                    </div>
+                       <a class="dropdown-item" href="afficherCliniques" class="nav-link">Liste des cliniques</a>
                     </li>
                 </c:if>        
                         

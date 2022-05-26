@@ -18,5 +18,6 @@ public interface CliniqueDao {
     boolean delete(int id);
     boolean update(Clinique clinique);
     boolean create(Clinique clinique);
+    Clinique findById(int id);
     
 }

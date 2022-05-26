@@ -44,12 +44,12 @@ public class InscriptionPatient extends HttpServlet {
         String message = "Inscription effectuée !";
         String messageAdmin = "Patient ajouté !";
         String ajoutAdmin = request.getParameter("ajoutAdmin");
-        
+
         Patient patient = new Patient(nom, prenom, assurance, naissance, sexe, email, password);
         
         boolean succes = PatientAction.inscriptionPatient(patient);
         if(succes) {
-            if(ajoutAdmin != null) {
+           if(ajoutAdmin != null) {
                 request.setAttribute("message", messageAdmin);
                 request.getRequestDispatcher("afficherPatients").forward(request, response);
             } else {
@@ -57,6 +57,7 @@ public class InscriptionPatient extends HttpServlet {
                 request.getRequestDispatcher("connexion.jsp").forward(request, response);
             }
             
+
         }
     }
 

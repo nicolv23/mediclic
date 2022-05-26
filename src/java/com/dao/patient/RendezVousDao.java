@@ -78,13 +78,13 @@ public class RendezVousDao {
 		}
 	}
 	
-	public void deleteAppointment(Connection dbCon, RendezVousDao apt) {
+	public void deleteAppointment(Connection dbCon, RendezVousPatient apt) {
 		
 		try {
 			
 			String sql = "DELETE from appointments WHERE apptnumber = ?";
 			ps = dbCon.prepareStatement(sql);
-			ps.setString(1, apt.getAppNumber());
+			ps.setInt(1, apt.getId());
 			result = ps.executeUpdate();
 		
 		} catch (SQLException e) {
@@ -94,13 +94,13 @@ public class RendezVousDao {
 		}
 	}	
 	
-	public void checkInAppointment(Connection dbCon, RendezVousDao apt) {
+	public void checkInAppointment(Connection dbCon, RendezVousPatient apt) {
 		
 		try {
 			
 			String sql = "UPDATE appointments SET IsPatientCheckedIn = 1 WHERE apptnumber = ?";
 			ps = dbCon.prepareStatement(sql);
-			ps.setString(1, apt.result);
+			ps.setInt(1, apt.getId());
 			result = ps.executeUpdate();
 		
 		} catch (SQLException e) {

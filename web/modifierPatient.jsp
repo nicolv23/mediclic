@@ -20,7 +20,15 @@
             document.getElementsByClassName("active")[0].classList.remove("active");
             document.getElementById("modif").classList.add("active");
         </script>
-
+<style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
         <div class="contents">
 
             <div class="container">
@@ -31,16 +39,15 @@
                                 <h3>Modifier un patient</h3>
                             </div>
                             <form action="adminPatient" method="post">
-                                <input type="hidden" name="id" value="${requestScope.id}">
-                                <c:choose>
-                                <c:when test="${patient != null}">    
+                                <c:if test="${patient != null}"> 
+                                <input type="hidden" name="id" value="${patient.id}">    
                                 <div class="form-group first">
                                     <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" value="${patient.nom}" placeholder="Nouveau nom" name="nom" id="nom" required>
+                                   <input type="text" class="form-control" value="${patient.nom}" placeholder="Nouveau nom" name="nom" id="nom" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" value="${patient.prenom}" placeholder="Nouveau prénom" name="prenom" id="prenom" required>
+                                      <input type="text" class="form-control" value="${patient.prenom}" placeholder="Nouveau prénom" name="prenom" id="prenom" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="assurance">Numéro d'assurance maladie</label>
@@ -58,9 +65,9 @@
                                     <label for="password">Mot de passe</label>
                                     <input type="password" class="form-control" value="${patient.password}" placeholder="Nouveau mot de passe" name="password" id="password" required>
                                 </div>
-                                </c:when>
-                               </c:choose>
-                                
+                               
+                                </c:if>
+
 
                                 <br>
                                 

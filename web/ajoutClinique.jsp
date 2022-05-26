@@ -20,7 +20,15 @@
             document.getElementsByClassName("active")[0].classList.remove("active");
             document.getElementById("modif").classList.add("active");
         </script>
-
+ <style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
         <div class="contents">
 
             <div class="container">

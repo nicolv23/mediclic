@@ -42,9 +42,10 @@ public class PatientAction {
         return succes;
     }
     
-    public static Patient rechercherPatientParId(int id) {
+     public static Patient rechercherPatientParId(int id) {
         Patient patient = dao.findById(id);
         return patient;
     }
     
+
 }

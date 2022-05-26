@@ -27,6 +27,7 @@ public class MedecinImplDao implements MedecinDao{
     private static final String SQL_DELETE = "DELETE FROM medecins WHERE id=?";
     private static final String SQL_UPDATE = "UPDATE medecins SET nom=?, prenom=?, specialite=?, numpro=?, coordonnes=?, "
             + "facturation=?, lieuTravail=?, mail=?, password=? WHERE id=?";
+    private static final String SQL_SELECT_ID = "SELECT * FROM medecins WHERE id=?";
 
     @Override
     public List<Medecin> findAll() {
@@ -86,6 +87,7 @@ public class MedecinImplDao implements MedecinDao{
                 medecin.setNumpro(resultat.getString("numpro"));
                 medecin.setCoordonnes(resultat.getString("coordonnes"));
                 medecin.setFacturation(resultat.getDouble("facturation"));
+                medecin.setLieuTravail(resultat.getString("lieuTravail"));
                 medecin.setSexe(resultat.getString("sexe"));
                 medecin.setMail(resultat.getString("mail"));
                 medecin.setPassword(resultat.getString("password"));
@@ -184,6 +186,39 @@ public class MedecinImplDao implements MedecinDao{
         }
         ConnexionBD.closeConnection();
         return retour;
+    }
+
+    @Override
+    public Medecin findById(int id) {
+        Medecin medecin = null; 
+        try {
+   
+            
+            PreparedStatement ps = ConnexionBD.getConnection().prepareStatement(SQL_SELECT_ID);
+            ps.setInt(1, id);
+            ResultSet result = ps.executeQuery();
+            
+            while (result.next()) {
+                
+                medecin = new Medecin();
+                medecin.setId(result.getInt("id"));
+                medecin.setNom(result.getString("nom"));
+                medecin.setPrenom(result.getString("prenom"));
+                medecin.setSpecialite(result.getString("specialite"));
+                medecin.setNumpro(result.getString("numpro"));
+                medecin.setCoordonnes(result.getString("coordonnes"));
+                medecin.setFacturation(result.getDouble("facturation"));
+                medecin.setLieuTravail(result.getString("lieuTravail"));
+                medecin.setSexe(result.getString("sexe"));
+                medecin.setMail(result.getString("mail"));
+                medecin.setPassword(result.getString("password"));
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MedecinImplDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       ConnexionBD.closeConnection();
+       return medecin; 
     }
     
    

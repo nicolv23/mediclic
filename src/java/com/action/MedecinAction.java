@@ -42,4 +42,9 @@ public class MedecinAction {
         return succes;
     }
     
+    public static Medecin rechercherMedecinParId(int id) {
+        Medecin medecin = dao.findById(id);
+        return medecin;
+    }
+    
 }

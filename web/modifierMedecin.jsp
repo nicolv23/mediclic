@@ -20,7 +20,15 @@
             document.getElementsByClassName("active")[0].classList.remove("active");
             document.getElementById("modif").classList.add("active");
         </script>
-
+<style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
         <div class="contents">
 
             <div class="container">
@@ -31,45 +39,46 @@
                                 <h3>Modifier un médecin</h3>
                             </div>
                             <form action="adminMedecin" method="post">
-                                <input type="hidden" name="id" value="${requestScope.id}">
+                                <c:if test="${medecin != null}">
+                                <input type="hidden" name="id" value="${medecin.id}">
 
                                 <div class="form-group first">
                                     <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" placeholder="Nouveau nom" name="nom" id="nom" required>
+                                    <input type="text" class="form-control" value="${medecin.nom}" placeholder="Nouveau nom" name="nom" id="nom" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="prenom">Prénom</label>
-                                    <input type="text" class="form-control" placeholder="Nouveau prénom" name="prenom" id="prenom" required>
+                                    <input type="text" class="form-control" value="${medecin.prenom}" placeholder="Nouveau prénom" name="prenom" id="prenom" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="specialite">Spécialité</label>
-                                    <input type="text" class="form-control" placeholder="Chirurgien" name="specialite" id="specialite" required>
+                                    <input type="text" class="form-control" value="${medecin.specialite}" placeholder="Chirurgien" name="specialite" id="specialite" required>
                                 </div>
                                 <div class="form-group first">
                                     <label for="numpro">Numéro de téléphone professionnel</label>
-                                    <input type="text" class="form-control" placeholder="(514)826-2123" name="numpro" id="numpro" required>
+                                    <input type="text" class="form-control" value="${medecin.numpro}" placeholder="(514)826-2123" name="numpro" id="numpro" required>
                                 </div>
                                 <div class="form-group first">
                                     <label for="facturation">Facturation</label>
-                                    <input type="number" class="form-control" placeholder="350" name="facturation" id="facturation" required>
+                                    <input type="number" class="form-control" value="${medecin.facturation}" placeholder="350" name="facturation" id="facturation" required>
                                 </div>  
                                 <div class="form-group first">
                                     <label for="coordonnees">Coordonnées</label>
-                                    <input type="text" class="form-control" placeholder="89 Rue de la Commune Est" name="coordonnees" id="coordonnees" required>
+                                    <input type="text" class="form-control" value="${medecin.coordonnes}" placeholder="89 Rue de la Commune Est" name="coordonnees" id="coordonnees" required>
                                 </div>
                                 <div class="form-group first">
                                     <label for="lieuJob">Lieu de travail</label>
-                                    <input type="text" class="form-control" placeholder="Hôpital Jean-Talon" name="lieuJob" id="lieuJob" required>
+                                    <input type="text" class="form-control" value="${medecin.lieuTravail}" placeholder="Hôpital Jean-Talon" name="lieuJob" id="lieuJob" required>
                                 </div>
                                 <div class="form-group first">
                                     <label for="username">Adresse courriel</label>
-                                    <input type="email" class="form-control" placeholder="nouveau-mail@gmail.com" name="email" id="username" required>
+                                    <input type="email" class="form-control" value="${medecin.mail}" placeholder="nouveau-mail@gmail.com" name="email" id="username" required>
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="password">Mot de passe</label>
-                                    <input type="password" class="form-control" placeholder="Nouveau mot de passe" name="password" id="password" required>
+                                    <input type="password" class="form-control" value="${medecin.password}" placeholder="Nouveau mot de passe" name="password" id="password" required>
                                 </div>
-                               
+                                </c:if>
                                 
 
                                 <br>

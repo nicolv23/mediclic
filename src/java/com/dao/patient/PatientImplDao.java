@@ -29,7 +29,6 @@ public class PatientImplDao implements PatientDao{
     private static final String SQL_UPDATE = "UPDATE patients SET nom=?, prenom=?, assurance=?, naissance=?, mail=?, "
             + "password=? WHERE id=?";
     private static final String SQL_SELECT_ID = "SELECT * FROM patients WHERE id=?";
-
     @Override
     public List<Patient> findAll() {
                          List<Patient> listePatient = null; 
@@ -176,8 +175,8 @@ public class PatientImplDao implements PatientDao{
         ConnexionBD.closeConnection();
         return retour;
     }
-
-    @Override
+    
+        @Override
     public Patient findById(int id) {
         Patient patient = null; 
         try {
@@ -206,5 +205,5 @@ public class PatientImplDao implements PatientDao{
        ConnexionBD.closeConnection();
        return patient; 
     }
-    
+
 }

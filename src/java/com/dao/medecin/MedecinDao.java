@@ -18,5 +18,5 @@ public interface MedecinDao {
     boolean create(Medecin medecin);
     boolean delete(int id);
     boolean update(Medecin medecin);
-    
+    Medecin findById(int id);
 }

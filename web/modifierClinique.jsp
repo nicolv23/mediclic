@@ -1,6 +1,6 @@
 <%-- 
     Document   : modifierClinique
-    Created on : 2022-05-22, 10:51:43
+    Created on : 2022-05-26, 15:41:31
     Author     : Joma_
 --%>
 
@@ -20,6 +20,15 @@
             document.getElementsByClassName("active")[0].classList.remove("active");
             document.getElementById("modif").classList.add("active");
         </script>
+<style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>        
 
         <div class="contents">
 
@@ -31,21 +40,22 @@
                                 <h3>Modifier une clinique</h3>
                             </div>
                             <form action="adminClinique" method="post">
-                                <input type="hidden" name="id" value="${requestScope.id}">
+                                <c:if test="${clinique != null}">
+                                <input type="hidden" name="id" value="${clinique.id}">
 
                                 <div class="form-group first">
                                     <label for="nom">Nom</label>
-                                    <input type="text" class="form-control" placeholder="Nouveau nom" name="nom" id="nom" required>
+                                    <input type="text" class="form-control" value="${clinique.nom}" placeholder="Nouveau nom" name="nom" id="nom" required>
                                 </div>    
                                 <div class="form-group first">
                                     <label for="coordonnees">Coordonnées</label>
-                                    <input type="text" class="form-control" placeholder="89 Rue de la Commune Est" name="coordonnees" id="coordonnees" required>
+                                    <input type="text" class="form-control" value="${clinique.coordonnees}" placeholder="89 Rue de la Commune Est" name="coordonnees" id="coordonnees" required>
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="services">Services</label>
-                                    <input type="text" class="form-control" placeholder="Urgence, Suivi de grossesse, Radiologie" name="services" id="services" required>
+                                    <input type="text" class="form-control" value="${clinique.services}" placeholder="Urgence, Suivi de grossesse, Radiologie" name="services" id="services" required>
                                 </div>
-                               
+                               </c:if>
                                 
 
                                 <br>

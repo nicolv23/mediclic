@@ -29,7 +29,7 @@
           <div class="row mb-5">
             <div class="col-md-3">
               <a href="index.jsp" class="footer-site-logo agrandissement">MediClic</a>
-              <p>Conslutez nos professionels de santé médical dés maintenant ! </p>
+              <p>Consultez nos professionels de santé médical dés maintenant ! </p>
             </div>
             <div class="col-md-2 ml-auto">
               <h3>Informations</h3>
@@ -45,7 +45,7 @@
             <div class="col-md-2 ml-auto">
               <h3>Actualité</h3>
               <ul class="list-unstyled links">
-                <li><a href="#">Événements</a></li>
+                <li><a href="https://ici.radio-canada.ca/theme/80/sante-publique/1">Événements</a></li>
                 <li><a href="#">Nouveauté</a></li>
               </ul>
             </div>
@@ -53,7 +53,6 @@
               <h3>À propos de nous</h3>
               <ul class="list-unstyled links">
                 <li><a href="contact.jsp">Nous Contacter</a></li>
-                <li><a href="#">Nos Services</a></li>
                 <li><a href="#">Notre Équipe</a></li>
                 <li><a href="#">Nos carrières</a></li>
               </ul>

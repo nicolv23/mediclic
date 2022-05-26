@@ -21,6 +21,15 @@
         document.getElementsByClassName("active")[0].classList.remove("active");
         document.getElementById("modif").classList.add("active");
         </script>
+         <style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
         <div class='container-fluid'>
         <h1 class="display-4 text-center">Liste des médecins</h1>
         <br><br>
@@ -65,9 +74,10 @@
                 </c:forEach>
             </tbody>
         </table>
-        <center>
+            <center>
             <a href="ajoutMedecin.jsp" class="btn btn-primary" role="button">Ajouter un médecin</a>
         </center>    
+
         </div>    
         
 

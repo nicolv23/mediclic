@@ -106,6 +106,7 @@ sup {
 
 a {
   color: #007bff;
+  
   text-decoration: none;
   background-color: transparent; }
   a:hover {
@@ -8337,3 +8338,4 @@ h1, h2, h3, h4, h5,
       color:orange;
       
   }
+  

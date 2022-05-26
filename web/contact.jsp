@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,13 +19,13 @@
         
         <script>
         document.getElementsByClassName("active")[0].classList.remove("active");
-        document.getElementById("contact").classList.add("active");
+        document.getElementById("accueil").classList.add("active");
         </script>
         
         <style>
 body {
     height: 100%;
-    background-image: url("images/mediclic_background.jpg");
+    background-image: url("images/mediclic.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
