@@ -1,9 +1,12 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 <!doctype html>
 <html lang="fr">
   <head>
-  	<title>Entête</title>
+  	<title>EntÃªte</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" >
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
@@ -40,23 +43,53 @@
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
 				<form action="#" class="searchform order-lg-last">
+                                    
 
-        </form>
+        </form> 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
 	        	<li class="nav-item active" id="accueil"><a href="index.jsp" class="nav-link">Accueil</a></li>
 	        	<li class="nav-item dropdown">
+                             <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+         url = "jdbc:mysql://127.0.0.1:3306/mediclic?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false"
+         user = "root"  password = "root"/>
+                <sql:query dataSource = "${snapshot}" var = "result">
+         SELECT * from mediclic.medecins;
+      </sql:query>
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Prendre un rendez-vous</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="#">Spécialiste 1</a>
-                <a class="dropdown-item" href="#">Spécialiste 2</a>
-                <a class="dropdown-item" href="#">Spécialiste 3</a>
-                <a class="dropdown-item" href="#">Spécialiste 4</a>
+                  <c:forEach var = "rows" items="${result.rows}">
+                      <a class="dropdown-item" href="rendezVous.jsp" class="nav-link">${rows.prenom} ${rows.nom}</a>
+                          <%--<c:out value = "${row.prenom}"/> <span>&nbsp;</span><c:out value = "${row.nom}"/>--%>
+                      </a>
+                  </c:forEach>
+                 
               </div>
             </li>
-	        	
-	        	<li class="nav-item" id="connexion"><a href="connexion.jsp" class="nav-link">Se connecter</a></li>
+            <c:choose>
+                <c:when test="${sessionScope.nom != null}">
+                    <li class="nav-item" id="deconnexion"><a href="deconnexion" class="nav-link">Se dÃ©connecter</a></li>
+                </c:when>
+                    
+                <c:otherwise>
+                    <li class="nav-item" id="connexion"><a href="connexion.jsp" class="nav-link">Se connecter</a></li>
+                </c:otherwise>    
+            </c:choose>	
+                  
 	          <li class="nav-item" id="contact"><a href="contact.jsp" class="nav-link">Nous contacter</a></li>
+                  <li class="nav-item" id="calendrier"><a href="disponibilitesHoraire.jsp" class="nav-link">Disponibilites</a></li>
+                <c:if test="${sessionScope.nom != null}">
+                    <c:choose>
+                        <c:when test="${sessionScope.sexe == 'Femme'}">
+                          <li class="nav-item" id="profil"><a href="profil.jsp" class="nav-link"><img src="images/profilef.png" alt="Image de Profile" width="20" height="20">   ${sessionScope.prenom} ${sessionScope.nom}</a></li>  
+                        </c:when>
+                    
+                        <c:otherwise>
+                        <li class="nav-item" id="profil"><a href="profil.jsp" class="nav-link"><img src="images/profile.png" alt="Image de Profile" width="20" height="20">   ${sessionScope.prenom} ${sessionScope.nom}</a></li>
+                    
+                        </c:otherwise>    
+                    </c:choose>	
+                </c:if>
 	        </ul>
 	      </div>
 	    </div>

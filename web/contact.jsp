@@ -14,11 +14,22 @@
     </head>
     <body>
         <%@include file="entete.jsp" %>
+        
         <script>
-        document.getElementById("accueil").classList.remove("active");
-        document.getElementById("connexion").classList.remove("active");
+        document.getElementsByClassName("active")[0].classList.remove("active");
         document.getElementById("contact").classList.add("active");
         </script>
+        
+        <style>
+body {
+    height: 100%;
+    background-image: url("images/mediclic_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+</style>
+
     <div class="contents">
 
       <div class="container">
@@ -32,7 +43,17 @@
                   <br>
                 <div class="form-group first">
                   <label for="cusername">Adresse courriel</label>
-                  <input type="text" class="form-control" placeholder="Saisissez votre email" name="email" id="cusername">
+  
+                  
+            <c:choose>
+                <c:when test="${sessionScope.nom != null}">
+                    <input type="text" class="form-control" value="${sessionScope.mail}" name="email" id="cusername" disabled>
+                </c:when>
+                    
+                <c:otherwise>
+                    <input type="text" class="form-control" placeholder="Entrez votre mail" name="email" id="cusername">
+                </c:otherwise>    
+            </c:choose>	
                 </div>
                 <div class="form-group last mb-3">
                   <label for="cpassword">Message</label>

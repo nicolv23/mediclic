@@ -1,0 +1,114 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 21-May-2022, 14:21:13
+    Author     : Nicolas Lazarte
+*/
+
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.calendar-container {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: auto;
+    grid-gap: 1px 1px;
+    grid-template-areas: 
+        ". header"
+        "timeslots-container main";
+}
+
+.weekdays, 
+.daynumbers {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    color:black;
+}
+.daynumbers{
+    min-height: 2em;
+}
+
+.weekdays{
+    background: lawngreen;
+    color: black;
+}
+
+.header{
+    background: gray;
+    grid-area: header;
+}
+
+.timeslots-container{
+    background: lightgray;
+    grid-area: timeslots-container;
+    justify-content: left;
+}
+
+.timeslots{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeslots li {
+    min-height: 60px;
+}
+
+.timeslots li::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    width: 100%;
+    height: 1px;
+    background: lightgray;
+    z-index: 1;
+}
+
+.event-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(36, 1fr);
+    grid-area: main;
+    position: relative;
+}
+
+.slot{
+    position: absolute;
+    background: darkslategrey;
+    border-radius: 5px;
+    z-index: 5;
+    color: white;
+    font-size: 12px;
+}
+
+.slot-1{
+    height: 30px;
+    
+    /**
+    abs(9-10) = 1 * 60 = 240 min
+    240/15 = 16 + 1 = 17;
+    */
+    grid-row: 17;
+    grid-column: 1;
+}
+
+#date, #time{
+    margin-left: 500px;
+    margin-bottom: 25px;
+
+}
+
+.titre{
+    font-style: inherit;
+    font-size: 40px;
+    color:black;
+    text-align: center;
+}
